@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* colors */
+:root {
+    --primary-color: #ebdcdc;
+    --secondary-color: #ebdcdc;
+    --third-color: #e29494
+}
+
+body {
+  font-family: Arial, Helvetica, san
+  background-color: #fff;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f3c9d1; /* deeper warm pink-beige tone */
+  padding: 18px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* contain logo + nav in a flexbox */
+header .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo area */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 90px;
+  height: auto;
+}
+
+#logoText {
+  width: 180px;
+  height: auto;
+}
+
+/* Navbar layout */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline-block;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #a15468; /* muted rose for text contrast */
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff5fa2; /* bright pink hover accent */
+}
+
+/* Slightly darker on scroll for better depth */
+header.scrolled {
+  background-color: rgba(243, 201, 209, 0.6); /* same pink, but see-through */
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2); /* Safari */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive menu for mobile (optional later) */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    background-color: #e6a9b5;
+    position: absolute;
+    top: 70px;
+    right: 10%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: none;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+}
+
+/* ==== HERO SECTION ==== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #ffe6ee 0%, #fff5f7 100%); /* new soft gradient background */
+  padding: 120px 10%; /* more padding for vertical size */
+  min-height: 100vh; /* takes up most of the screen */
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-size: 62px; /* slightly bigger for prominence */
+  color: #ff5fa2;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #5b5b5b;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.btn {
+  background-color: #ff5fa2;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 6px 18px rgba(255, 95, 162, 0.3);
+}
+
+.btn:hover {
+  background-color: #e29494;
+  transform: translateY(-2px);
+}
+
+.hero-img img {
+  width: 420px; /* larger dog image */
+  border-radius: 45% 55% 55% 45% / 45% 45% 55% 55%; /* playful blob shape */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.hero-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 5%;
+  }
+
+  .hero-img img {
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
+}
+
+/* ABOUT SECTION */
+
+.about {
+  background-color: #fff;
+  padding: 80px 10%;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-text h2 {
+  color: #ff5fa2;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.about-img img {
+  width: 280px;
+  border-radius: 50%;
+  background-color: #ffd7e0;
+  padding: 20px;
+}
+
+/* SERVICES SECION */
+.services {
+  background-color: #fff5f7;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.services h2 {
+  color: #ff5fa2;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 25px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #e29494;
+  font-size: 22px;
+  maring-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* ===== MODAL OVERLAY ===== */
+.booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* dark transparent bg behind popup */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 9999; /* above everything */
+}
+
+.booking-modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== MODAL CARD ===== */
+.booking-modal-card {
+  background: #ffffff;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+  border: 3px solid #ff5fa2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden; /* round corners clip iframe */
+}
+
+/* close (X) button */
+.booking-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #ff5fa2;
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.booking-close:hover {
+  background: #e29494;
+}
+
+/* header text inside popup */
+.booking-header {
+  background: #fff5f7;
+  padding: 32px 24px 16px 24px;
+  text-align: center;
+  border-bottom: 1px solid #ffe4ef;
+}
+
+.booking-header h2 {
+  color: #ff5fa2;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.booking-header p {
+  color: #5b5b5b;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 420px;
+}
+
+/* Calendly iframe area */
+.booking-body {
+  background: #ffffff;
+  padding: 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1; /* take available vertical space */
+}
+
+.calendly-inline-widget {
+  width: 100%;
+  min-height: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #ffd7e6;
+  background-color: #fff5f7; /* behind iframe load flash */
+}
+
+/* footer of popup */
+.booking-footer {
+  background: #fff5f7;
+  border-top: 1px solid #ffe4ef;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #5b5b5b;
+}
+
+/* small screens */
+@media (max-width: 600px) {
+  .booking-modal-card {
+    border-radius: 20px;
+    max-height: 95vh;
+  }
+
+  .booking-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .booking-close {
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+/* button in navbar can look special if you want */
+.schedule-btn {
+  background-color: #ff5fa2;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.schedule-btn:hover {
+  background-color: #e29494;
+  color: #fff;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  background-color: #fff;
+  padding: 80px 10%;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-inner {
+  max-width: 600px;
+  margin: 0 auto; /* centers the whole block */
+}
+
+.contact-section h2 {
+  color: #ff5fa2;
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.contact-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.contact-section .btn {
+  display: inline-block;
+  margin-top: 25px; /* space above button */
+  padding: 14px 34px;
+  font-size: 16px;
+  border-radius: 30px;
+  background-color: #ff5fa2;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(255, 95, 162, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-section .btn:hover {
+  background-color: #e29494;
+  transform: translateY(-3px);
+}

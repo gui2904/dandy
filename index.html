@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winnie Paws</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./img/winni1.png"/>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  </head>
+  <body>
+
+    <!-- header -->
+    <header>
+      <div class="container">
+	<div class="logo">
+	  <a href="#"><img src="./img/winni1.png" alt="logo"></a>
+	  <a href="#"><img id="logoText" src="./img/winni2.png" alt="logo"></a>
+	</div>
+	<nav class="navbar">
+	  <ul>
+	    <li class="navitem"><a href="#hero">Home</a></li>
+	    <li class="navitem"><a href="#">About</a></li>
+	    <li class="navitem"><a href="#servicos">Services</a></li>
+	    <li class="navitem"><a href="#contact">Contact</a></li>
+	    <li class="navitem"><a href="#schedule">Schedule</a></li>
+	  </ul>
+	</nav>
+      </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-text">
+	<h1> GET YOUR DOG GROOM ON</h1>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	<a href="#contact" class="btn">BOOK NOW</a>
+      </div>
+      <div class="hero-img">
+	<img src="./img/hero-dog.png" alt="happy dog" />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about-content">
+	<div class="about-text">
+	  <h2>ABOUT US</h2>
+	  <p>We're dedicated to giving dogs the best grooming treatment possible, while providing a fun and relaxing environment for them to enjoy.</p>
+	  <a href="#contact" class="btn">LEARN MORE</a>
+	</div>
+	<div class="about-img">
+	  <img src="./img/about-dog.png" alt="dog with sunglasses" />
+	</div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="sevicos" class="services">
+      <h2>OUR SERVICES</h2>
+      <div class="service-cards">
+	<div class="card">
+	  <img src="./img/service-grooming.png" alt="grooming dog">
+	  <h3>GROOMING</h3>
+	  <p>Keep your pup looking their best with a full grooming session.</p>
+	  <a href="#contact" class="btn">LEARN MORE</a>
+	</div>
+	<div class="card">
+	  <img src="./img/service-grooming.png" alt="grooming dog">
+	  <h3>GROOMING</h3>
+	  <p>Keep your pup looking their best with a full grooming session.</p>
+	  <a href="#contact" class="btn">LEARN MORE</a>
+	</div>
+	<div class="card">
+	  <img src="./img/service-grooming.png" alt="grooming dog">
+	  <h3>GROOMING</h3>
+	  <p>Keep your pup looking their best with a full grooming session.</p>
+	  <a href="#contact" class="btn">LEARN MORE</a>
+	</div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="contact-inner">
+	<h2>CONTACT US</h2>
+	<p><strong>Phone:</strong> (555) 123-4567</p>
+	<p><strong>Location:</strong> Miami, FL</p>
+	<p><strong>Hours:</strong> Mon–Sat · 9am–6pm</p>
+	<a href="#" class="btn open-booking">BOOK AN APPOINTMENT</a>
+      </div>
+    </section>
+
+    <!-- 🌸 CUSTOM POPUP MODAL WITH CALENDLY INSIDE -->
+    <div id="bookingModal" class="booking-modal-overlay">
+      <div class="booking-modal-card">
+	<button class="booking-close" aria-label="Close scheduling popup">&times;</button>
+
+	<div class="booking-header">
+          <h2>Book Your Grooming Appointment</h2>
+          <p>Choose a time that works for you. We’ll pamper your pup ✂🐾</p>
+	</div>
+
+	<div class="booking-body">
+          <!-- Calendly inline widget -->
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/gfulco4/30min?hide_gdpr_banner=1&background_color=fff5f7&text_color=5b5b5b&primary_color=ff5fa2"
+            style="min-width:320px;height:600px;"
+            ></div>
+	</div>
+
+	<div class="booking-footer">
+	  <small>Questions? Text us at (555) 123-4567 💗</small>
+	</div>
+      </div>
+    </div>
+
+    <!-- Calendly script (required for embedded widget) -->
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+      ></script>
+
+    <!-- Modal open/close script -->
+    <script>
+      // open buttons
+      const openBtns = document.querySelectorAll(".open-booking");
+      const modal = document.getElementById("bookingModal");
+      const closeBtn = document.querySelector(".booking-close");
+
+      // open modal
+      openBtns.forEach(btn => {
+	  btn.addEventListener("click", function (e) {
+              e.preventDefault();
+              modal.classList.add("show");
+              document.body.style.overflow = "hidden"; // lock scroll behind modal
+	  });
+      });
+
+      // close modal by X
+      closeBtn.addEventListener("click", function () {
+	  modal.classList.remove("show");
+	  document.body.style.overflow = "";
+      });
+
+      // close modal by clicking outside the card
+      modal.addEventListener("click", function (e) {
+	  if (e.target === modal) {
+              modal.classList.remove("show");
+              document.body.style.overflow = "";
+	  }
+      });
+    </script>
+    <script>
+      window.addEventListener("scroll", function () {
+	  const header = document.querySelector("header");
+
+	  if (window.scrollY > 40) {
+	      header.classList.add("scrolled");
+	  } else {
+	      header.classList.remove("scrolled");
+	  }
+      });
+    </script>
+
+  </body>
+
+</html> 
