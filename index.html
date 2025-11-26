@@ -31,7 +31,7 @@
 	    <li class="navitem"><a href="#about">About</a></li>
 	    <li class="navitem"><a href="#servicos">Services</a></li>
 	    <li class="navitem"><a href="#contact">Contact</a></li>
-	    <li class="navitem"><a href="#schedule">Schedule</a></li>
+	    <li class="navitem"><a href="#schedule" class="open-booking">Schedule</a></li>
 	  </ul>
 	</nav>
       </div>
@@ -94,13 +94,24 @@
 
 	<!-- BATH AND TIDY -->
 	<div class="card">
-	  <img src="./img/services3.jpg" alt="grooming dog">
+	  <img src="./img/services3.jpg" alt="bath and tidy">
 	  <h3>BATH AND TIDY</h3>
 	  <p>Bath plus light trim to keep face, feet, and sanitary <br>areas neat.</p>
 	  <a href="#"
              class="btn service-learn-more"
              data-service="bath_tidy">LEARN MORE</a>
 	</div>
+
+	<!-- FLEA AND TICK TREATMENT -->
+	<div class="card">
+	  <img src="./img/services4.jpg" alt="flea and tick treatment">
+	  <h3>FLEA AND TICK TREATMENT</h3>
+	  <p>Bath plus light trim to keep face, feet, and sanitary <br>areas neat.</p>
+	  <a href="#"
+             class="btn service-learn-more"
+             data-service="bath_tidy">LEARN MORE</a>
+	</div>
+	
 
       </div>
     </section>
@@ -169,31 +180,45 @@
 	  grooming: {
 	      title: "GROOMING",
 	      body: `
-	Our full grooming service includes a gentle bath with premium shampoo,
-	blow-dry, full brush-out, customized haircut, nail trim, paw pad and
-	sanitary trimming, ear cleaning, and finishing touches like a bow or bandana.
-	<br><br>
-	Perfect for pups who need the whole spa treatment and a fresh, polished look.
+        Our full grooming service provides a complete spa experience for your pup.
+        It includes a gentle bath with premium shampoo, blow-dry, full brush-out,
+        customized haircut, nail trim, paw pad and sanitary trim, ear cleaning,
+        and a polished finishing touch such as a bow or bandana.
+        <br><br>
+        Perfect for pups who deserve a clean, fresh, and beautifully finished look.
+
       `
 	  },
 	  bathing: {
 	      title: "BATHING",
 	      body: `
-	A relaxing, low-stress bath ideal for in-between grooms. This service
-	includes a gentle cleanse, conditioner, blow-dry, thorough brushing,
-	nail trim, and ear cleaning.
-	<br><br>
-	Great for keeping your dog’s coat clean, soft, and smelling amazing without a full haircut.
+        Our bath service includes a gentle wash with premium shampoo, a full brush-out,
+        blow-dry, nail trim and ear cleaning.
+        This service is ideal for pups who don’t need a haircut but still deserve a fresh,
+        clean, and well-groomed look.
+        <br><br>
+        Perfect for maintaining your dog’s hygiene and keeping their coat soft, shiny, and smelling amazing.
       `
 	  },
 	  bath_tidy: {
 	      title: "BATH AND TIDY",
 	      body: `
-	Everything in our bath package plus light trimming to keep your pup
-	looking neat between full grooms. We tidy the face, feet, and sanitary areas
-	while maintaining your dog’s overall style.
+        Our Bath & Tidy service is perfect for pups who need a fresh, clean look without a full haircut.
+        It includes a premium bath, blow-dry, ear cleaning, paw pad trim, sanitary trim, and a gentle
+        face trim — including around the eyes to keep their vision clear and their face neat.
 	<br><br>
-	Perfect for maintaining shape and cleanliness without a full haircut.
+	Ideal for maintaining your dog’s hygiene and keeping them looking polished between full grooming appointments.
+      `
+	  },
+	  bath_tidy: {
+	      title: "FLEA AND TICK TREATMENT",
+	      body: `
+	  Our Flea & Tick Treatment helps eliminate and protect your pup from unwanted pests.
+	  This service includes a deep cleansing flea & tick shampoo, a thorough brush-out, and
+	  careful inspection of the skin and coat to ensure parasites are removed.
+	  We finish with a gentle blow-dry and recommendations for at-home prevention.
+	  <br><br>
+	  Perfect for pups experiencing itching, irritation, or seasonal pest exposure — keeping them clean, comfortabl          e, and protected.
       `
 	  }
       };
