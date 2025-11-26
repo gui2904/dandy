@@ -11,7 +11,7 @@
   </head>
   <body>
 
-    <!-- header -->
+    <!-- Header Section -->
     <header>
       <div class="container">
 	<div class="logo">
@@ -21,7 +21,7 @@
 	<nav class="navbar">
 	  <ul>
 	    <li class="navitem"><a href="#hero">Home</a></li>
-	    <li class="navitem"><a href="#">About</a></li>
+	    <li class="navitem"><a href="#about">About</a></li>
 	    <li class="navitem"><a href="#servicos">Services</a></li>
 	    <li class="navitem"><a href="#contact">Contact</a></li>
 	    <li class="navitem"><a href="#schedule">Schedule</a></li>
@@ -33,9 +33,10 @@
     <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="hero-text">
-	<h1> GET YOUR DOG GROOM ON</h1>
-	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-	<a href="#contact" class="btn">BOOK NOW</a>
+	<h1> GET YOUR DOG GROOM WITH LOVE</h1>
+	<p>Give your furry friend a relaxing, gentle, and premium grooming experience.
+From soothing baths to stylish trims, we make every pup look and feel their best.</p>
+	<a href="#" class="btn open-booking">BOOK NOW</a>
       </div>
       <div class="hero-img">
 	<img src="./img/hero-dog.png" alt="happy dog" />
@@ -47,7 +48,10 @@
       <div class="about-content">
 	<div class="about-text">
 	  <h2>ABOUT US</h2>
-	  <p>We're dedicated to giving dogs the best grooming treatment possible, while providing a fun and relaxing environment for them to enjoy.</p>
+	  <p>Hi! I’m Giovanna, the heart behind Winnie Paws. A mobile pet stylist dedicated to comfort, wellness, and gentle grooming.</p>
+	  <p>I’ve always treated animals like family, and that’s exactly how I care for every pup I meet. My approach is loving, patient, and detail-oriented, turning grooming into a calm and positive experience. More than a service, it’s personal care with intention. The same way I care for my own dogs.</p>
+	  <p>When your pet is with me, they’re safe, loved, and beautifully styled.</p>
+	  <p class="last">Fresh fur, happy paws, and lots of love! That’s the Winnie Paws way.</p>
 	  <a href="#contact" class="btn">LEARN MORE</a>
 	</div>
 	<div class="about-img">
@@ -57,27 +61,40 @@
     </section>
 
     <!-- Services Section -->
-    <section id="sevicos" class="services">
+    <section id="servicos" class="services"> 
       <h2>OUR SERVICES</h2>
       <div class="service-cards">
+
+	<!-- GROOMING -->
 	<div class="card">
-	  <img src="./img/service-grooming.png" alt="grooming dog">
+	  <img src="./img/services1.jpg" alt="grooming dog">
 	  <h3>GROOMING</h3>
-	  <p>Keep your pup looking their best with a full grooming session.</p>
-	  <a href="#contact" class="btn">LEARN MORE</a>
+	  <p>Full groom with bath, haircut, nails, and paw care.</p>
+	  <a href="#"
+             class="btn service-learn-more"
+             data-service="grooming">LEARN MORE</a>
 	</div>
+
+	<!-- BATHING -->
 	<div class="card">
-	  <img src="./img/service-grooming.png" alt="grooming dog">
-	  <h3>GROOMING</h3>
-	  <p>Keep your pup looking their best with a full grooming session.</p>
-	  <a href="#contact" class="btn">LEARN MORE</a>
+	  <img src="./img/services2.jpg" alt="bathing dog">
+	  <h3>BATHING</h3>
+	  <p>Gentle bath, blow-dry, <br>and brush for a fresh, clean coat.</p>
+	  <a href="#"
+             class="btn service-learn-more"
+             data-service="bathing">LEARN MORE</a>
 	</div>
+
+	<!-- BATH AND TIDY -->
 	<div class="card">
-	  <img src="./img/service-grooming.png" alt="grooming dog">
-	  <h3>GROOMING</h3>
-	  <p>Keep your pup looking their best with a full grooming session.</p>
-	  <a href="#contact" class="btn">LEARN MORE</a>
+	  <img src="./img/services3.jpg" alt="grooming dog">
+	  <h3>BATH AND TIDY</h3>
+	  <p>Bath plus light trim to keep face, feet, and sanitary <br>areas neat.</p>
+	  <a href="#"
+             class="btn service-learn-more"
+             data-service="bath_tidy">LEARN MORE</a>
 	</div>
+
       </div>
     </section>
 
@@ -85,14 +102,29 @@
     <section id="contact" class="contact-section">
       <div class="contact-inner">
 	<h2>CONTACT US</h2>
-	<p><strong>Phone:</strong> (555) 123-4567</p>
+	<p><strong>Phone:</strong> (754) 293-7221</p>
 	<p><strong>Location:</strong> Miami, FL</p>
 	<p><strong>Hours:</strong> Mon–Sat · 9am–6pm</p>
 	<a href="#" class="btn open-booking">BOOK AN APPOINTMENT</a>
       </div>
     </section>
 
-    <!-- 🌸 CUSTOM POPUP MODAL WITH CALENDLY INSIDE -->
+    <!-- SERVICE DETAILS MODAL -->
+    <div id="serviceModal" class="service-modal-overlay">
+      <div class="service-modal-card">
+	<button class="service-close" aria-label="Close service details">&times;</button>
+	<div class="service-modal-header">
+	  <h3 id="serviceModalTitle">Service Title</h3>
+	</div>
+	<div class="service-modal-body">
+	  <p id="serviceModalBody">
+            Full service description will appear here.
+	  </p>
+	</div>
+      </div>
+    </div>
+
+    <!-- BOOKING MODAL -->
     <div id="bookingModal" class="booking-modal-overlay">
       <div class="booking-modal-card">
 	<button class="booking-close" aria-label="Close scheduling popup">&times;</button>
@@ -123,6 +155,76 @@
       type="text/javascript"
       async
       ></script>
+
+    <script>
+      // ===== SERVICE MODAL LOGIC =====
+      const serviceDetails = {
+	  grooming: {
+	      title: "GROOMING",
+	      body: `
+	Our full grooming service includes a gentle bath with premium shampoo,
+	blow-dry, full brush-out, customized haircut, nail trim, paw pad and
+	sanitary trimming, ear cleaning, and finishing touches like a bow or bandana.
+	<br><br>
+	Perfect for pups who need the whole spa treatment and a fresh, polished look.
+      `
+	  },
+	  bathing: {
+	      title: "BATHING",
+	      body: `
+	A relaxing, low-stress bath ideal for in-between grooms. This service
+	includes a gentle cleanse, conditioner, blow-dry, thorough brushing,
+	nail trim, and ear cleaning.
+	<br><br>
+	Great for keeping your dog’s coat clean, soft, and smelling amazing without a full haircut.
+      `
+	  },
+	  bath_tidy: {
+	      title: "BATH AND TIDY",
+	      body: `
+	Everything in our bath package plus light trimming to keep your pup
+	looking neat between full grooms. We tidy the face, feet, and sanitary areas
+	while maintaining your dog’s overall style.
+	<br><br>
+	Perfect for maintaining shape and cleanliness without a full haircut.
+      `
+	  }
+      };
+
+      const serviceModal = document.getElementById("serviceModal");
+      const serviceTitle = document.getElementById("serviceModalTitle");
+      const serviceBody = document.getElementById("serviceModalBody");
+      const serviceCloseBtn = document.querySelector(".service-close");
+
+      document.querySelectorAll(".service-learn-more").forEach(btn => {
+	  btn.addEventListener("click", function (e) {
+	      e.preventDefault();
+	      const key = this.dataset.service;
+	      const data = serviceDetails[key];
+	      if (!data) return;
+
+	      serviceTitle.textContent = data.title;
+	      serviceBody.innerHTML = data.body;
+
+	      serviceModal.classList.add("show");
+	      document.body.style.overflow = "hidden"; // lock background scroll
+	  });
+      });
+
+      // Close by X
+      serviceCloseBtn.addEventListener("click", function () {
+	  serviceModal.classList.remove("show");
+	  document.body.style.overflow = "";
+      });
+
+      // Close by clicking outside card
+      serviceModal.addEventListener("click", function (e) {
+	  if (e.target === serviceModal) {
+	      serviceModal.classList.remove("show");
+	      document.body.style.overflow = "";
+	  }
+      });
+      </script>
 
     <!-- Modal open/close script -->
     <script>
