@@ -18,7 +18,14 @@
 	  <a href="#"><img src="./img/winni1.png" alt="logo"></a>
 	  <a href="#"><img id="logoText" src="./img/winni2.png" alt="logo"></a>
 	</div>
-	<nav class="navbar">
+
+	<!-- HAMBURGER BUTTON (shown on mobile) -->
+	<button class="nav-toggle" aria-label="Toggle navigation">
+	  <span></span>
+	</button>
+	
+	<!-- NAV LINKS -->
+	<nav class="navbar" id="mainNav">
 	  <ul>
 	    <li class="navitem"><a href="#hero">Home</a></li>
 	    <li class="navitem"><a href="#about">About</a></li>
@@ -35,7 +42,7 @@
       <div class="hero-text">
 	<h1> GET YOUR DOG GROOM WITH LOVE</h1>
 	<p>Give your furry friend a relaxing, gentle, and premium grooming experience.
-From soothing baths to stylish trims, we make every pup look and feel their best.</p>
+	  From soothing baths to stylish trims, we make every pup look and feel their best.</p>
 	<a href="#" class="btn open-booking">BOOK NOW</a>
       </div>
       <div class="hero-img">
@@ -251,14 +258,20 @@ From soothing baths to stylish trims, we make every pup look and feel their best
       // close modal by clicking outside the card
       modal.addEventListener("click", function (e) {
 	  if (e.target === modal) {
-              modal.classList.remove("show");
-              document.body.style.overflow = "";
+	      modal.classList.remove("show");
+	      document.body.style.overflow = "";
 	  }
       });
     </script>
     <script>
-      window.addEventListener("scroll", function () {
-	  const header = document.querySelector("header");
+      const body     = document.body;
+      const header   = document.querySelector("header");
+      const navToggle = document.querySelector(".nav-toggle");
+      const navLinks  = document.querySelectorAll(".navbar a");
+
+      // Header scroll behaviour (only when menu is NOT open)
+      window.addEventListener("scroll", () => {
+	  if (body.classList.contains("nav-open")) return;
 
 	  if (window.scrollY > 40) {
 	      header.classList.add("scrolled");
@@ -266,7 +279,31 @@ From soothing baths to stylish trims, we make every pup look and feel their best
 	      header.classList.remove("scrolled");
 	  }
       });
+
+      // Hamburger toggle
+      navToggle.addEventListener("click", () => {
+	  const willOpen = !body.classList.contains("nav-open");
+
+	  if (willOpen) {
+	      // jump to top so overlay always starts from top of page
+	      window.scrollTo(0, 0);
+	      // keep header in "not scrolled" look while menu is open
+	      header.classList.remove("scrolled");
+	  }
+
+	  body.classList.toggle("nav-open");
+	  navToggle.classList.toggle("open");
+      });
+
+      // Close menu when clicking a nav link
+      navLinks.forEach(link => {
+	  link.addEventListener("click", () => {
+	      body.classList.remove("nav-open");
+	      navToggle.classList.remove("open");
+	  });
+      });
     </script>
+
 
   </body>
 

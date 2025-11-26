@@ -32,6 +32,7 @@ header .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -52,7 +53,7 @@ header .container {
   width: 180px;
 }
 
-/* NAV LINKS */
+/* desktop nav */
 .navbar ul {
   list-style: none;
   display: flex;
@@ -67,7 +68,52 @@ header .container {
 }
 
 .navbar a:hover {
-    color: #ff5fa2; /* bright pink hover accent */
+  color: #ff5fa2;
+}
+
+/* HAMBURGER BUTTON (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: 16px;
+  z-index: 1100; /* above overlay nav */
+}
+
+/* the 3 bars */
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  display: block;
+  width: 24px;
+  height: 3px;
+  border-radius: 999px;
+  background-color: #a15468;
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
+  position: relative;
+}
+
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle span::before { top: -7px; }
+.nav-toggle span::after  { top:  7px; }
+
+/* X state when menu is open */
+.nav-toggle.open span {
+  background-color: transparent;
+}
+.nav-toggle.open span::before {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.open span::after {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* SCROLLED HEADER EFFECT */
@@ -77,30 +123,56 @@ header.scrolled {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* responsive header tweaks */
+/* when mobile menu is open, lock background scroll */
+body.nav-open {
+  overflow: hidden;
+}
+
+/* ===== MOBILE NAV OVERLAY ===== */
 @media (max-width: 850px) {
   header .container {
-    flex-direction: column;
+    width: 94%;
+  }
+
+  /* show hamburger */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* full-screen overlay nav */
+  .navbar {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, #ffdee9 0%, #ff9ac4 100%);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1050;
   }
 
   .navbar ul {
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
   }
 
   .navbar a {
-    font-size: 16px;
+    font-size: 24px;
+    color: #fff;
   }
 
-  .logo img {
-    width: 75px;
+  /* show overlay when body has nav-open */
+  body.nav-open .navbar {
+    opacity: 1;
+    pointer-events: auto;
   }
 
-  #logoText {
-    width: 150px;
+  body.nav-open header {
+    background-color: transparent;
+    box-shadow: none;
   }
 }
 
@@ -109,15 +181,17 @@ header.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(180deg, #ffe6ee 0%, #fff5f7 100%);
-  padding: 120px 10%;
-  min-height: 100vh; 
   flex-wrap: wrap;
+
+  background: linear-gradient(180deg, #ffe6ee 0%, #fff5f7 100%);
+  padding: 140px 10% 70px; /* top padding accounts for fixed header */
+  min-height: 100vh;
 }
 
 .hero-text {
   flex: 1;
   max-width: 550px;
+  min-width: 300px;
 }
 
 .hero-text h1 {
@@ -142,8 +216,6 @@ header.scrolled {
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
-  transition: background 0.3s, transform 0.2s;
-  box-shadow: 0 6px 18px rgba(255, 95, 162, 0.3);
 }
 
 .btn:hover {
@@ -162,33 +234,37 @@ header.scrolled {
   transform: scale(1.05);
 }
 
-/* hero responsiveness */
+/* ----- TABLET FIX ----- */
 @media (max-width: 900px) {
   .hero {
-    padding: 110px 7%;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
+    padding: 130px 7% 50px;
     text-align: center;
-    padding: 100px 5%;
+    flex-direction: column;
+  }
+
+  .hero-text {
+    max-width: 90%;
   }
 
   .hero-text h1 {
-    font-size: 48px;
+    font-size: 44px;
   }
 
   .hero-img img {
-    width: 80%;
-    margin-top: 10px;
+    width: 75%;
+    margin-top: 15px;
   }
 }
 
+/* ----- SMALL PHONE FIX ----- */
 @media (max-width: 480px) {
+  .hero {
+    padding: 120px 5% 40px;
+  }
+
   .hero-text h1 {
-    font-size: 40px;
+    font-size: 36px;
+    margin-top: 50px;
   }
 
   .hero-text p {
@@ -196,11 +272,9 @@ header.scrolled {
   }
 
   .hero-img img {
-    width: 80%;
-    margin-top: 0px;
+    width: 85%;
   }
 }
-
 
 /* ==== ABOUT SECTION ==== */
 
