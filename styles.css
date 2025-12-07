@@ -163,21 +163,40 @@ body.nav-open {
   /* full-screen overlay nav */
   .navbar {
     position: fixed;
-    inset: 0;
-    background: var(--green);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--green);
+    background-image: url("./img/hero-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    z-index: 1050;
+
+    /* layout */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;   /* start from top */
+    align-items: flex-start;
+    padding-top: 100px;            /* space under logo / header */
 
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    z-index: 1050;
   }
 
   .navbar ul {
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .navbar li {
+    width: 100%;
+    text-align: center;
   }
 
   .navbar a {
@@ -194,6 +213,13 @@ body.nav-open {
   body.nav-open header {
     background-color: transparent;
     box-shadow: none;
+  }
+
+  /* hide hero content when mobile menu is open */
+  body.nav-open .hero-text,
+  body.nav-open .hero-img {
+    opacity: 0;
+    pointer-events: none; /* just in case */
   }
 }
 
