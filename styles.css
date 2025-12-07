@@ -684,20 +684,33 @@ body.nav-open {
   color: var(--pink);
 }
 
-/* booking modal responsive */
+/* booking modal – phones full-screen */
 @media (max-width: 600px) {
+  .booking-modal-overlay {
+    padding: 0;                     /* no gap around card */
+    align-items: stretch;           /* let card stretch vertically */
+    justify-content: flex-start;    /* start at the top */
+  }
+
   .booking-modal-card {
-    border-radius: 20px;
-    max-height: 95vh;
-    width: 95%;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
   }
 
-  .booking-header h2 {
-    font-size: 1.25rem;
+  .booking-header {
+    padding: 40px 24px 16px 24px;   /* a bit of top spacing */
   }
 
-  .booking-header p {
-    font-size: 0.9rem;
+  .booking-body {
+    flex: 1;
+    overflow-y: auto;               /* scroll inside modal if needed */
+    -webkit-overflow-scrolling: touch;
   }
 
   .booking-close {
@@ -707,6 +720,15 @@ body.nav-open {
     height: 32px;
     font-size: 20px;
     line-height: 30px;
+    z-index: 99999;                 /* keep close button above iframe */
+  }
+
+  .booking-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .booking-header p {
+    font-size: 0.9rem;
   }
 }
 
@@ -777,37 +799,5 @@ body.nav-open {
   section {
     padding-left: 5%;
     padding-right: 5%;
-  }
-
-  .booking-modal-overlay {
-    padding: 0 !important;  /* remove outer spacing */
-  }
-
-  .booking-modal-card {
-    width: 100vw !important;
-    height: 100vh !important;
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-
-    border-radius: 0 !important;  /* no rounded edges, full screen */
-    border: none !important;      /* cleaner full-screen look */
-
-    display: flex;
-    flex-direction: column;
-  }
-
-  .booking-header {
-    padding-top: 40px; /* keep spacing at top */
-  }
-
-  .booking-body {
-    flex: 1;
-    overflow-y: auto;  /* scrolling inside modal */
-  }
-
-  .booking-close {
-    top: 12px;
-    right: 12px;
-    z-index: 99999; /* keep button above everything */
   }
 }
