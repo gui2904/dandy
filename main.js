@@ -83,22 +83,16 @@ document.addEventListener("DOMContentLoaded", () => {
     consentBtn.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // list of PDFs to download
-      const filesToDownload = [
-        "./winnie-paws-consent-1.pdf",
-      ];
+      const file = "./winnie-paws-consent-1.pdf";
 
-      filesToDownload.forEach((filePath) => {
-        const link = document.createElement("a");
-        link.href = filePath;
-        link.download = filePath.split("/").pop(); // just the filename
-        link.target = "_blank";                    // open in new tab
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-      });
+      const link = document.createElement("a");
+      link.href = file;
+      link.download = "winnie-paws-consent-1.pdf";
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
     });
   }
-
     
 });
