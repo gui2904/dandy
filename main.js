@@ -75,4 +75,34 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // CONSENT FORM BUTTON LOGIC
+  const consentBtn = document.getElementById("consent-download-btn");
+
+  if (consentBtn) {
+    consentBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // 1. Begin fade-out
+      consentBtn.classList.add("fade-out");
+
+      // 2. Perform download without leaving the page
+      const link = document.createElement("a");
+      link.href = "./winnie-paws-consent.pdf";
+      link.download = "winnie-paws-consent.pdf";
+      link.target = "_blank"; // opens new tab
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      // 3. After fade-out, change text + animate fade-in
+      setTimeout(() => {
+        consentBtn.textContent = "Submit Consent Form";
+        consentBtn.classList.remove("fade-out");
+        consentBtn.classList.add("fade-in", "submitting");
+      }, 300); // matches CSS opacity transition
+    });
+  }
+
+    
 });
