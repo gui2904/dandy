@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // list of PDFs to download
       const filesToDownload = [
         "./winnie-paws-consent-1.pdf",
-        "./winnie-paws-consent-2.pdf",
       ];
 
       filesToDownload.forEach((filePath) => {
