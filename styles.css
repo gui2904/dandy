@@ -8,7 +8,13 @@
 :root {
     --primary-color: #ebdcdc;
     --secondary-color: #ebdcdc;
-    --third-color: #e29494
+    --third-color: #e29494;
+    --green: #808e5d;
+    --green-dark: #6a744b;
+    --pink: #f2cdc5;
+    --pink-dark: #e0b4aa;
+    --text-light: #fffaf5;
+    --text-dark: #4b4b4b;
 }
 
 body {
@@ -21,9 +27,10 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #f3c9d1;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(6px);            /* optional blur */
   padding: 18px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   z-index: 1000;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
@@ -62,13 +69,27 @@ header .container {
 
 .navbar a {
   text-decoration: none;
-  color: #a15468;
+  color: var(--pink);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
+
 }
 
 .navbar a:hover {
-  color: #ff5fa2;
+  color: #ffffff;
+}
+
+.nav-btn {
+  background-color: var(--pink);
+  color: var(--green-dark) !important;
+  padding: 8px 16px;
+  border-radius: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.nav-btn:hover {
+  background-color: var(--pink-dark);
 }
 
 /* HAMBURGER BUTTON (hidden on desktop) */
@@ -86,13 +107,7 @@ header .container {
 .nav-toggle span,
 .nav-toggle span::before,
 .nav-toggle span::after {
-  display: block;
-  width: 24px;
-  height: 3px;
-  border-radius: 999px;
-  background-color: #a15468;
-  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
-  position: relative;
+  background-color: var(--pink); 
 }
 
 .nav-toggle span::before,
@@ -118,9 +133,9 @@ header .container {
 
 /* SCROLLED HEADER EFFECT */
 header.scrolled {
-  background-color: rgba(243, 201, 209, 0.7);
-  backdrop-filter: blur(12px) saturate(1.2);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  background-color: rgba(128, 142, 93, 0.75);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* when mobile menu is open, lock background scroll */
@@ -143,7 +158,7 @@ body.nav-open {
   .navbar {
     position: fixed;
     inset: 0;
-    background: linear-gradient(180deg, #ffdee9 0%, #ff9ac4 100%);
+    background: var(--green);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,7 +176,7 @@ body.nav-open {
 
   .navbar a {
     font-size: 24px;
-    color: #fff;
+    color: var(--pink);
   }
 
   /* show overlay when body has nav-open */
@@ -183,8 +198,14 @@ body.nav-open {
   justify-content: space-between;
   flex-wrap: wrap;
 
-  background: linear-gradient(180deg, #ffe6ee 0%, #fff5f7 100%);
-  padding: 140px 10% 70px; /* top padding accounts for fixed header */
+  /* fallback color + image */
+  background-color: var(--green);
+  background-image: url("./img/hero-bg.png");
+  background-repeat: no-repeat;    /* or "repeat" if you want tiling */
+  background-size: cover;          /* make it fill the hero area */
+  background-position: center;     /* keep it centered */
+
+  padding: 140px 10% 70px;
   min-height: 100vh;
 }
 
@@ -196,37 +217,38 @@ body.nav-open {
 
 .hero-text h1 {
   font-size: 62px; /* slightly bigger for prominence */
-  color: #ff5fa2;
+  color: var(--pink);
   margin-bottom: 20px;
   line-height: 1.1;
 }
 
 .hero-text p {
   font-size: 18px;
-  color: #5b5b5b;
+  color: var(--text-light);
   margin-bottom: 35px;
   line-height: 1.6;
 }
 
 .btn {
-  background-color: #ff5fa2;
-  color: white;
+  background-color: var(--pink);
+  color: var(--green-dark);
   padding: 14px 32px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
+  border: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .btn:hover {
-  background-color: #e29494;
+  background-color: var(--pink-dark);
   transform: translatey(-2px);
 }
 
 .hero-img img {
   width: 420px; /* larger dog image */
-  border-radius: 45% 55% 55% 45% / 45% 45% 55% 55%; /* playful blob shape */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: none; 
   transition: transform 0.4s ease;
 }
 
@@ -279,7 +301,7 @@ body.nav-open {
 /* ==== ABOUT SECTION ==== */
 
 .about {
-  background-color: #fff;
+  background-color: var(--pink);
   padding: 80px 10%;
 }
 
@@ -300,13 +322,13 @@ body.nav-open {
 }
 
 .about-text h2 {
-  color: #ff5fa2;
+  color: var(--green-dark);
   font-size: 38px;
   margin-bottom: 20px;
 }
 
 .about-text p {
-  color: #555;
+  color: var(--text-dark);
   font-size: 18px;
   margin-bottom: 20px;
 }
@@ -346,13 +368,13 @@ body.nav-open {
 
 /* ==== SERVICES SECTION ==== */
 .services {
-  background-color: #fff5f7;
+  background-color: var(--green);
   padding: 80px 10%;
   text-align: center;
 }
 
 .services h2 {
-  color: #ff5fa2;
+  color: var(--pink);
   font-size: 40px;
   margin-bottom: 40px;
 }
@@ -369,7 +391,7 @@ body.nav-open {
   border-radius: 20px;
   padding: 25px;
   width: 280px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
   transition: transform 0.3;
 }
 
@@ -385,7 +407,7 @@ body.nav-open {
 }
 
 .card h3 {
-  color: #e29494;
+  color: var(--green-dark);
   font-size: 22px;
   margin-bottom: 10px;
 }
@@ -436,7 +458,7 @@ body.nav-open {
   width: 100%;
   border-radius: 24px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-  border: 3px solid #ff5fa2;
+  border: 3px solid var(--green);
   position: relative;
   padding: 28px 24px 24px;
 }
@@ -445,7 +467,7 @@ body.nav-open {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: #ff5fa2;
+  background: var(--green);
   color: #fff;
   border: none;
   width: 32px;
@@ -459,7 +481,7 @@ body.nav-open {
 }
 
 .service-close:hover {
-  background: #e29494;
+  background: var(--green-dark);
 }
 
 .service-modal-header h3 {
@@ -505,7 +527,7 @@ body.nav-open {
   width: 100%;
   border-radius: 24px;
   box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-  border: 3px solid #ff5fa2;
+  border: 3px solid var(--green);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -518,7 +540,7 @@ body.nav-open {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: #ff5fa2;
+  background: var(--green);
   color: #fff;
   border: none;
   width: 36px;
@@ -532,19 +554,19 @@ body.nav-open {
 }
 
 .booking-close:hover {
-  background: #e29494;
+  background: var(--green-dark);
 }
 
 /* header text inside popup */
 .booking-header {
-  background: #fff5f7;
+  background: var(--pink);
   padding: 32px 24px 16px 24px;
   text-align: center;
-  border-bottom: 1px solid #ffe4ef;
+  border-bottom: 1px solid var(--pink-dark);
 }
 
 .booking-header h2 {
-  color: #ff5fa2;
+  color: var(--green-dark);
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -631,10 +653,10 @@ body.nav-open {
 
 /* ==== CONTACT SECTION ==== */
 .contact-section {
-  background-color: #fff;
+  background-color: var(--pink);
   padding: 80px 10%;
   text-align: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: none;
 }
 
 .contact-inner {
@@ -643,7 +665,7 @@ body.nav-open {
 }
 
 .contact-section h2 {
-  color: #ff5fa2;
+  color: var(--green-dark);
   font-size: 32px;
   margin-bottom: 20px;
   font-weight: 700;
@@ -652,7 +674,7 @@ body.nav-open {
 
 .contact-section p {
   font-size: 16px;
-  color: #555;
+  color: var(--text-dark);
   margin-bottom: 8px;
 }
 
@@ -662,7 +684,7 @@ body.nav-open {
   padding: 14px 34px;
   font-size: 16px;
   border-radius: 30px;
-  background-color: #ff5fa2;
+  background-color: var(--green-dark);
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -671,7 +693,7 @@ body.nav-open {
 }
 
 .contact-section .btn:hover {
-  background-color: #e29494;
+  background-color: var(--green);
   transform: translatey(-3px);
 }
 
