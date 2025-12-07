@@ -681,7 +681,7 @@ body.nav-open {
 /* Optional: style when switched to "Submit" */
 .consent-btn.submitting {
   background-color: var(--green-dark);
-  color: white;
+  color: var(--pink);
 }
 
 /* booking modal responsive */
