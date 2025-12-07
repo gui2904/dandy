@@ -107,7 +107,13 @@ header .container {
 .nav-toggle span,
 .nav-toggle span::before,
 .nav-toggle span::after {
-  background-color: var(--pink); 
+  display: block;
+  width: 24px;
+  height: 3px;
+  border-radius: 999px;
+  background-color: var(--pink);
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
+  position: relative;
 }
 
 .nav-toggle span::before,
@@ -264,6 +270,11 @@ body.nav-open {
     flex-direction: column;
   }
 
+  .hero-img {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
   .hero-text {
     max-width: 90%;
   }
@@ -271,11 +282,11 @@ body.nav-open {
   .hero-text h1 {
     font-size: 44px;
   }
-
   .hero-img img {
     width: 75%;
-    margin-top: 15px;
+    margin-top: 0;
   }
+
 }
 
 /* ----- SMALL PHONE FIX ----- */
