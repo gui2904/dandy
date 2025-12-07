@@ -694,23 +694,29 @@ body.nav-open {
 
   .booking-modal-card {
     width: 100vw;
-    height: 100vh;
     max-width: 100vw;
+
+    /* let the card size to the real viewport */
     max-height: 100vh;
+    height: auto;
+    height: 100dvh; /* Safari & modern browsers use this instead of buggy 100vh */
+
     border-radius: 0;
     border: none;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+  }
+
+  .booking-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: 0; /* important for Safari flexbox scroll */
   }
 
   .booking-header {
     padding: 40px 24px 16px 24px;   /* a bit of top spacing */
-  }
-
-  .booking-body {
-    flex: 1;
-    overflow-y: auto;               /* scroll inside modal if needed */
-    -webkit-overflow-scrolling: touch;
   }
 
   .booking-close {

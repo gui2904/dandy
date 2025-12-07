@@ -1,19 +1,32 @@
 // Wrap everything so it runs after the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   // ===== BOOKING MODAL =====
+  let calendlyInitialized = false;
   const openBtns = document.querySelectorAll(".open-booking");
   const modal    = document.getElementById("bookingModal");
   const closeBtn = document.querySelector(".booking-close");
 
   if (modal && closeBtn && openBtns.length > 0) {
-    // open modal
-    openBtns.forEach(btn => {
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
-        modal.classList.add("show");
-        document.body.style.overflow = "hidden"; // lock scroll behind modal
-      });
+  // open modal
+  openBtns.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden"; // lock scroll behind modal
+
+      // ---- Calendly inline init (run once) ----
+      if (!calendlyInitialized && window.Calendly) {
+        Calendly.initInlineWidget({
+          url: "https://calendly.com/winniepaws2323/new-meeting?hide_gdpr_banner=1&background_color=f2cdc5&text_color=5b5b5b&primary_color=808e5d",
+          parentElement: document.getElementById("calendly-inline-container"),
+          prefill: {},
+          utm: {}
+        });
+        calendlyInitialized = true;
+      }
     });
+  });
+
 
     // close modal by X
     closeBtn.addEventListener("click", function () {
