@@ -200,7 +200,7 @@ body.nav-open {
 
   /* fallback color + image */
   background-color: var(--green);
-  background-image: url("./img/hero-bg.png");
+  background-image: url("./img/hero-bg.webp");
   background-repeat: no-repeat;    /* or "repeat" if you want tiling */
   background-size: cover;          /* make it fill the hero area */
   background-position: center;     /* keep it centered */
