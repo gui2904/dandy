@@ -778,4 +778,36 @@ body.nav-open {
     padding-left: 5%;
     padding-right: 5%;
   }
+
+  .booking-modal-overlay {
+    padding: 0 !important;  /* remove outer spacing */
+  }
+
+  .booking-modal-card {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+
+    border-radius: 0 !important;  /* no rounded edges, full screen */
+    border: none !important;      /* cleaner full-screen look */
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .booking-header {
+    padding-top: 40px; /* keep spacing at top */
+  }
+
+  .booking-body {
+    flex: 1;
+    overflow-y: auto;  /* scrolling inside modal */
+  }
+
+  .booking-close {
+    top: 12px;
+    right: 12px;
+    z-index: 99999; /* keep button above everything */
+  }
 }
