@@ -409,6 +409,7 @@ body.nav-open {
 /* ==== SERVICES SECTION ==== */
 .services {
   background-color: var(--green);
+  background-image: url("./img/hero-bg.webp");
   padding: 80px 10%;
   text-align: center;
 }
