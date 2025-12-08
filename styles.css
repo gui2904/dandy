@@ -316,11 +316,11 @@ body.nav-open {
 /* ----- SMALL PHONE FIX ----- */
 @media (max-width: 480px) {
   .hero {
-    padding: 120px 5% 40px;
+    padding: 100px 5% 40px;
   }
 
   .hero-text h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .hero-text p {
@@ -328,7 +328,7 @@ body.nav-open {
   }
 
   .hero-img {
-    marin-bottom: 0;
+    marin-bottom: 0px;
   }
   
   .hero-img img {
