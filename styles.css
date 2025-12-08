@@ -238,8 +238,7 @@ body.nav-open {
   background-position: center;     /* keep it centered */
 
   padding: 140px 10% 70px;
-  min-height: 100dvh;
-  height: 100dvh;
+  min-height: 100vh;
 }
 
 .hero-text {
@@ -319,16 +318,12 @@ body.nav-open {
 /* ----- SMALL PHONE FIX ----- */
 @media (max-width: 480px) {
   .hero {
-    padding: 110px 5% 30px;
-    min-height: 100dvh;
-    height: 100dvh;
-    flex-direction: column;
-    justify-content: flex-start;
+    padding: 120px 5% 40px;
   }
 
   .hero-text h1 {
     font-size: 36px;
-    margin-top: 40px;
+    margin-top: 50px;
   }
 
   .hero-text p {
