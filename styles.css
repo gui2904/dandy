@@ -173,7 +173,6 @@ body.nav-open {
     background-position: center;
     background-repeat: no-repeat;
 
-
     z-index: 1050;
 
     /* layout */
@@ -298,7 +297,6 @@ body.nav-open {
 
   .hero-img {
     order: -1;
-    margin-bottom: 20px;
   }
 
   .hero-text {
@@ -330,7 +328,7 @@ body.nav-open {
   }
 
   .hero-img {
-    
+    marin-bottom: 0;
   }
   
   .hero-img img {
