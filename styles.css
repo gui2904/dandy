@@ -316,7 +316,7 @@ body.nav-open {
 /* ----- SMALL PHONE FIX ----- */
 @media (max-width: 480px) {
   .hero {
-    padding: 100px 5% 40px;
+    padding: 110px 5% 40px;
   }
 
   .hero-text h1 {
