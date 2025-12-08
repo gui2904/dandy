@@ -641,6 +641,7 @@ body.nav-open {
   background: #fff5f7;
   border-top: 1px solid #ffe4ef;
   padding: 16px 24px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); /* extra for iOS */
 
   display: flex;
   flex-direction: column;
