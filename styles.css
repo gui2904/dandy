@@ -424,6 +424,8 @@ body.nav-open {
   background-size: cover;
   background-position: center;
   
+  padding: 80px 10%;
+  text-align: center;
 }
 
 .services-pricing h2 {
