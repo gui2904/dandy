@@ -54,11 +54,15 @@
       <div class="about-content">
 	<div class="about-text">
 	  <h2>ABOUT US</h2>
-	  <p>Hi! I’m Giovanna, the heart behind Winnie Paws. A mobile pet stylist dedicated to comfort, wellness, and gentle grooming.</p>
-	  <p>I’ve always treated dogs like family, and that’s exactly how I care for every pup I meet. My approach is loving, patient, and detail-oriented, turning grooming into a calm and positive experience. More than a service, it’s personal care with intention. The same way I care for my own dogs.</p>
-	  <p>When your pet is with me, they’re safe, loved, and beautifully styled.</p>
-	  <p class="last">Fresh fur, happy paws, and lots of love! That’s the Winnie Paws way.</p>
-	  <a href="#contact" class="btn">LEARN MORE</a>
+
+	  <div class"about-text-box">
+	    <p>Hi! I’m Giovanna, the heart behind Winnie Paws. A mobile pet stylist dedicated to comfort, wellness, and gentle grooming.</p>
+	    <p>I’ve always treated dogs like family, and that’s exactly how I care for every pup I meet. My approach is loving, patient, and detail-oriented, turning grooming into a calm and positive experience. More than a service, it’s personal care with intention. The same way I care for my own dogs.</p>
+	    <p>When your pet is with me, they’re safe, loved, and beautifully styled.</p>
+	    <p class="last">Fresh fur, happy paws, and lots of love! That’s the Winnie Paws way.</p>
+
+	    <a href="#contact" class="btn">LEARN MORE</a>
+	  </div>
 	</div>
 	<div class="about-img">
 	  <img src="./img/about-dog.png" alt="dog with sunglasses" />
@@ -66,54 +70,106 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicos" class="services"> 
-      <h2>OUR SERVICES</h2>
-      <div class="service-cards">
+    <!-- SERVICES + PRICES (ONE SECTION) -->
+    <section id="servicos" class="services-pricing">
+      <!-- SERVICES -->
+      <div class="block">
+	<h2>OUR SERVICES</h2>
 
-	<!-- GROOMING -->
-	<div class="card">
-	  <img src="./img/services1.jpg" alt="grooming dog">
-	  <h3>GROOMING</h3>
-	  <p>Full groom with bath, haircut, nails, and paw care.</p>
-	  <a href="#"
-             class="btn open-booking"
-             data-service="grooming">BOOK NOW</a>
+	<div class="service-cards">
+	  <div class="card">
+            <img src="./img/services1.jpg" alt="grooming dog">
+            <h3>GROOMING</h3>
+            <p>Full groom with bath, haircut, nails, and paw care.</p>
+            <a href="#" class="btn open-booking" data-service="grooming">BOOK NOW</a>
+	  </div>
+
+	  <div class="card">
+            <img src="./img/services2.jpg" alt="bathing dog">
+            <h3>BATHING</h3>
+            <p>Gentle bath, blow-dry, <br>and brush for a fresh, clean coat.</p>
+            <a href="#" class="btn open-booking" data-service="bathing">BOOK NOW</a>
+	  </div>
+
+	  <div class="card">
+            <img src="./img/services3.jpg" alt="bath and tidy">
+            <h3>BATH AND TIDY</h3>
+            <p>Bath plus light trim to keep face, feet, and sanitary <br>areas neat.</p>
+            <a href="#" class="btn open-booking" data-service="bath_tidy">BOOK NOW</a>
+	  </div>
+
+	  <div class="card">
+            <img src="./img/services4.jpg" alt="flea and tick treatment">
+            <h3>FLEA AND TICK TREATMENT</h3>
+            <p>Protect your pup with our gentle yet effective flea and tick treatment.</p>
+            <a href="#" class="btn open-booking" data-service="flea_tick">BOOK NOW</a>
+	  </div>
+	</div>
+      </div>
+
+      <!-- PRICES -->
+      <div id="prices" class="block prices-block">
+	<h2>OUR PRICES</h2>
+
+	<div class="price-cards">
+	  <div class="price-card">
+            <h3>GROOMING</h3>
+            <p class="price-sub">Full groom + bath + haircut + nails + paw care</p>
+            <div class="price-range"><span>Starting at</span><strong>$85</strong></div>
+            <a href="#" class="btn open-booking" data-service="grooming">BOOK NOW</a>
+	  </div>
+
+	  <div class="price-card">
+            <h3>BATHING</h3>
+            <p class="price-sub">Bath + blow-dry + brush</p>
+            <div class="price-range"><span>Starting at</span><strong>$95</strong></div>
+	    <a href="#" class="btn open-booking" data-service="bathing">BOOK NOW</a>
+	  </div>
+
+	  <div class="price-card">
+            <h3>BATH & TIDY</h3>
+
+	    <p class="price-sub">
+	      Bath, blow-dry, nails, ears, paw trim<br>
+	      <strong>No haircut</strong>
+	    </p>
+
+	    <div class="price-tiers">
+	      <div class="tier"><span>Extra Small (0–15 lbs)</span><strong> $90</strong></div>
+	      <div class="tier"><span>Small (16–25 lbs)</span><strong> $115</strong></div>
+	      <div class="tier"><span>Medium (26–40 lbs)</span><strong> $130</strong></div>
+	      <div class="tier"><span>Large (41–61 lbs)</span><strong> $145</strong></div>
+	      <div class="tier"><span>XL (62+ lbs)</span><strong> $170</strong></div>
+	    </div>
+
+	    <a href="#"
+	       class="btn open-booking"
+	       data-service="bath_tidy">
+	      BOOK NOW
+	    </a>
+	  </div>
+
+	  <div class="price-card">
+            <h3>FLEA &amp; TICK</h3>
+            <p class="price-sub">Gentle treatment (add-on to any service)</p>
+            <div class="price-range"><span>Add-on</span><strong>+$20</strong></div>
+            <a href="#" class="btn open-booking" data-service="flea_tick">BOOK NOW</a>
+	  </div>
 	</div>
 
-	<!-- BATHING -->
-	<div class="card">
-	  <img src="./img/services2.jpg" alt="bathing dog">
-	  <h3>BATHING</h3>
-	  <p>Gentle bath, blow-dry, <br>and brush for a fresh, clean coat.</p>
-	  <a href="#"
-             class="btn open-booking"
-             data-service="bathing">BOOK NOW</a>
+	<div class="prices-footer">
+	  <div class="prices-footer-box">
+            <h4>Popular add-ons</h4>
+            <ul>
+              <li>Teeth Brushing — $15</li>
+              <li>Flea & Tick Treatment — $70</li>
+              <li>Dematting Fee — $30–$80 (Depends on the service)</li>
+            </ul>
+	  </div>
 	</div>
-
-	<!-- BATH AND TIDY -->
-	<div class="card">
-	  <img src="./img/services3.jpg" alt="bath and tidy">
-	  <h3>BATH AND TIDY</h3>
-	  <p>Bath plus light trim to keep face, feet, and sanitary <br>areas neat.</p>
-	  <a href="#"
-             class="btn open-booking"
-             data-service="bath_tidy">BOOK NOW</a>
-	</div>
-
-	<!-- FLEA AND TICK TREATMENT -->
-	<div class="card">
-	  <img src="./img/services4.jpg" alt="flea and tick treatment">
-	  <h3>FLEA AND TICK TREATMENT</h3>
-	  <p>Protect your pup with our gentle yet effective flea and tick treatment.</p>
-	  <a href="#"
-             class="btn open-booking"
-             data-service="flea_tick">BOOK NOW</a>
-	</div>
-	
-
       </div>
     </section>
+  
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">
