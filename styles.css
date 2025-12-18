@@ -420,6 +420,10 @@ body.nav-open {
 .services-pricing {
   background-color: var(--green);
   background-image: url("./img/hero-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
   padding: 80px 10%;
   text-align: center;
 }
@@ -923,7 +927,7 @@ body.nav-open {
 
 /* ==== CONTACT SECTION ==== */
 .contact-section {
-  background-color: var(--pink);
+  background-image: url("./img/hero-bg2.webp");
   padding: 80px 10%;
   text-align: center;
   border-top: none;
