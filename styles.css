@@ -424,8 +424,6 @@ body.nav-open {
   background-size: cover;
   background-position: center;
   
-  padding: 80px 10%;
-  text-align: center;
 }
 
 .services-pricing h2 {
@@ -440,6 +438,14 @@ body.nav-open {
 
 .services-pricing .block:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .services-pricing {
+    background-repeat: repeat;
+    background-size: 420px;      /* tweak 320–520px */
+    background-position: top left;
+  }
 }
 
 /* ==== SERVICES SECTION ==== */
