@@ -15,7 +15,7 @@
     <header>
       <div class="container">
 	<div class="logo">
-	  <a href="#"><img id="logoText" src="./img/winni2.png" alt="logo"></a>
+	  <a href="#"><img id="logoText" src="./img/winni2.webp" alt="logo"></a>
 	</div>
 
 	<!-- HAMBURGER BUTTON (shown on mobile) -->
@@ -45,7 +45,7 @@
 	<a href="#" class="btn open-booking">BOOK NOW</a>
       </div>
       <div class="hero-img">
-	<img src="./img/hero-dog.png" alt="happy dog" />
+	<img src="./img/hero-dog.webp" alt="happy dog" />
       </div>
     </section>
 
@@ -65,7 +65,7 @@
 	  </div>
 	</div>
 	<div class="about-img">
-	  <img src="./img/about-dog.png" alt="dog with sunglasses" />
+	  <img src="./img/about-dog.webp" alt="dog with sunglasses" />
 	</div>
       </div>
     </section>
@@ -78,28 +78,28 @@
 
 	<div class="service-cards">
 	  <div class="card">
-            <img src="./img/services1.jpg" alt="grooming dog">
+            <img src="./img/services1.webp" alt="grooming dog">
             <h3>GROOMING</h3>
             <p>Full groom with bath, haircut, nails, and paw care.</p>
             <a href="#" class="btn open-booking" data-service="grooming">BOOK NOW</a>
 	  </div>
 
 	  <div class="card">
-            <img src="./img/services2.jpg" alt="bathing dog">
+            <img src="./img/services2.webp" alt="bathing dog">
             <h3>BATHING</h3>
             <p>Gentle bath, blow-dry, <br>and brush for a fresh, clean coat.</p>
             <a href="#" class="btn open-booking" data-service="bathing">BOOK NOW</a>
 	  </div>
 
 	  <div class="card">
-            <img src="./img/services3.jpg" alt="bath and tidy">
+            <img src="./img/services3.webp" alt="bath and tidy">
             <h3>BATH AND TIDY</h3>
             <p>Bath plus light trim to keep face, feet, and sanitary <br>areas neat.</p>
             <a href="#" class="btn open-booking" data-service="bath_tidy">BOOK NOW</a>
 	  </div>
 
 	  <div class="card">
-            <img src="./img/services4.jpg" alt="flea and tick treatment">
+            <img src="./img/services4.webp" alt="flea and tick treatment">
             <h3>FLEA AND TICK TREATMENT</h3>
             <p>Protect your pup with our gentle yet effective flea and tick treatment.</p>
             <a href="#" class="btn open-booking" data-service="flea_tick">BOOK NOW</a>
@@ -116,28 +116,28 @@
             <h3>GROOMING</h3>
             <p class="price-sub">Basic Full Groom & Full Groom</p>
             <div class="price-range"><span>Starting at</span><strong>$110</strong></div>
-            <a href="#" class="btn open-booking" data-service="grooming">LEARN MORE</a>
+            <a href="#" class="btn open-price" data-price="grooming">LEARN MORE</a>
 	  </div>
 
 	  <div class="price-card">
             <h3>BATHING</h3>
             <p class="price-sub">Short Hair Bath & Double Coated Bath + Deshed</p>
-            <div class="price-range"><span>Starting at</span><strong>$115</strong></div>
-	    <a href="#" class="btn open-booking" data-service="bathing">LEARN MORE</a>
+            <div class="price-range"><span>Starting at</span><strong>$70</strong></div>
+	    <a href="#" class="btn open-price" data-price="bathing">LEARN MORE</a>
 	  </div>
 
 	  <div class="price-card">
 	    <h3>BATH & TIDY</h3>
 	    <p class="price-sub">Bath & Tidy (Bath, Blow-Dry, Nails, Ears, Paw Trim — No Haircut)</p>
 	    <div class="price-range"><span>Starting at</span><strong>$90</strong></div>
-	    <a href="#" class="btn open-booking" data-service="bath_tidy">LEARN MORE</a>
+	    <a href="#" class="btn open-price" data-price="bath_tidy">LEARN MORE</a>
 	  </div>
 
 	  <div class="price-card">
             <h3>FLEA &amp; TICK</h3>
             <p class="price-sub">Gentle treatment (add-on to any service)</p>
             <div class="price-range"><span>Add-on</span><strong>+$20</strong></div>
-            <a href="#" class="btn open-booking" data-service="flea_tick">LEARN MORE</a>
+            <a href="#" class="btn open-price" data-price="flea_tick">LEARN MORE</a>
 	  </div>
 	</div>
 
@@ -200,6 +200,27 @@
             DOWNLOAD CONSENT FORM
 	  </a>
 
+	  <small>Questions? Text us at (728) 240-2867 💗</small>
+	</div>
+      </div>
+    </div>
+
+    <!-- PRICES MODAL -->
+    <div id="priceModal" class="price-modal-overlay" aria-hidden="true">
+      <div class="price-modal-card" role="dialog" aria-modal="true" aria-labelledby="priceModalTitle">
+	<button class="price-close" aria-label="Close pricing popup">&times;</button>
+
+	<div class="price-header">
+	  <h2 id="priceModalTitle">Service Details</h2>
+	  <p id="priceModalSubtitle">What’s included + pricing notes</p>
+	</div>
+
+	<div class="price-body" id="priceModalBody">
+	  <!-- injected content -->
+	</div>
+
+	<div class="price-footer">
+	  <a href="#" class="btn open-booking">BOOK NOW</a>
 	  <small>Questions? Text us at (728) 240-2867 💗</small>
 	</div>
       </div>
