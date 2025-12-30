@@ -130,24 +130,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // Simple content map (edit text freely)
   const PRICE_DETAILS = {
     grooming: {
-      title: "Grooming",
-      subtitle: "Grooming options · Starting at $110",
+      title: "Full Grooming",
+      subtitle: "Full Grooming · Starting at $120",
       prices: [
-        { label: "Small Dogs (up to 15 lbs)", value: "$110" },
-        { label: "Medium Dogs (16-40 lbs)", value: "$120" },
-        { label: "Large Dogs (41-70 lb)", value: "$160" },
-        { label: "XL Dogs (71+ lb)", value: "$180" }
+        { label: "Extra Small Dogs (up to 15 lbs)", value: "$120" },
+        { label: "Small Dogs (16-25 lbs)", value: "$140" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$165" },
+        { label: "Large Dogs (41-61 lb)", value: "$180" },
+        { label: "XL Dogs (61+ lb)", value: "$200" }
       ],
       body: `
         <div class="price-detail-block">
           <h3>What’s included</h3>
           <ul>
-            <li>Bath + blow-dry</li>
-            <li>Full haircut & styling</li>
-            <li>Nails trimmed</li>
-            <li>Ears cleaned</li>
-            <li>Paw pad trim</li>
+            <li>Blow Dry + Thorough Brush & Comb Out</li>
+            <li>Ear Cleaning</li>
+            <li>Nail Clipping & Buffing</li>
+            <li>Paw Pad Trim</li>
+            <li>Sanitary Trim</li>
           </ul>
+
+          <h3>Hairstyles</h3>
+          <ul>
+            <li>Light Trims</li>
+            <li>Hand Scissored Trims</li>
+            <li>Breed Standard Patterns</li>
+            <li>Short Styles</li>
+            <li>Accessory</li>
+          </ul>
+
+          <h3>Breed examples</h3>
+          <p>Yorkie, Maltese, Shih-tzu, Collies, Shelties, Westies, Golden Retrievers, etc.</p>
 
           <h3>Pricing notes</h3>
           <p>
@@ -160,51 +173,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
     bathing: {
       title: "Bathing",
-      subtitle: "Short hair bath",
+      subtitle: "Short Hair Bath · Starting at $70",
       prices: [
         { label: "X-Small Dogs (up to 15 lbs)", value: "$70" },
         { label: "Small Dogs (16-25 lbs)", value: "$90" },
-        { label: "Medium Dogs (16-40 lbs)", value: "$110" },
-        { label: "Large Dogs (41-70 lbs)", value: "$135" },
-        { label: "XL Dogs (71+ lbs)", value: "$155" }
+        { label: "Medium Dogs (26-40 lbs)", value: "$110" },
+        { label: "Large Dogs (41-60 lbs)", value: "$135" },
+        { label: "XL Dogs (61+ lbs)", value: "$155" }
       ],
       body: `
         <div class="price-detail-block">
           <h3>What’s included</h3>
           <ul>
-            <li>Bath</li>
-            <li>Blow-Dry</li>
-            <li>Nails</li>
-            <li>Ears</li>
+            <li>Skin/coat-appropriate Shampoo & Conditioner</li>
+            <li>Blow Dry</li>
+            <li>Thorough Brush & Comb Out</li>
+            <li>De-shedding (if applicable)</li>
+            <li>Ear Cleaning</li>
+            <li>Nail Clipping & Buffing</li>
+            <li>Paw Pad Trim (if applicable)</li>
+            <li>Sanitary Trim (if applicable)</li>
+            <li>Accessory</li>
           </ul>
 
-          <h3>Great for</h3>
-          <p>Short Coat Breeds.</p>
+          <h3>Breed Examples</h3>
+          <p>Pitbull, Bulldog, Boxer, Coonhound, Beagle, Mastiff, Pug, etc.</p>
+
+          <h3>Pricing notes</h3>
+          <p>
+            Final price depends on breed, coat condition, size, and behavior.
+            Matting may require extra time and may add a dematting fee.
+          </p>
         </div>
       `
     },
 
     bath_tidy: {
       title: "Bath & Tidy",
-      subtitle: "Bath + light trim · Starting at $90",
+      subtitle: "Bath & Tidy · Starting at $90",
       prices: [
-        { label: "Small (0–20 lb)", value: "$90+" },
-        { label: "Medium (21–45 lb)", value: "$105+" },
-        { label: "Large (46–75 lb)", value: "$125+" }
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$90+" },
+        { label: "Small Dogs (16-25 lbs)", value: "$115" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$130" },
+        { label: "Large Dogs (41–60 lbs)", value: "$145" },
+        { label: "XL Dogs (61+ lbs)", value: "$170" }
       ],
       body: `
         <div class="price-detail-block">
           <h3>What’s included</h3>
           <ul>
-            <li>Bath + blow-dry</li>
-            <li>Nails</li>
-            <li>Ears</li>
-            <li>Paw trim</li>
-            <li>Light tidy (face/feet/sanitary areas)</li>
+            <li>Skin/coat-appropriate Shampoo & Conditioner</li>
+            <li>Blow Dry</li>
+            <li>Thorough Brush & Comb Out</li>
+            <li>Ear Cleaning</li>
+            <li>Nail Clipping & Buffing</li>
+            <li>Paw Pad Trim (if applicable)</li>
+            <li>Sanitary Trim (if applicable)</li>
+            <li>Face & Feet Trim</li>
+            <li>Accessory</li>
           </ul>
 
-          <p class="price-note">
-            <strong>No full haircut</strong> — perfect maintenance option.
+          <h3>Pricing notes</h3>
+          <p>
+            Final price depends on breed, coat condition, size, and behavior.
+            Matting may require extra time and may add a dematting fee.
           </p>
         </div>
       `
