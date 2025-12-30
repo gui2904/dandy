@@ -167,11 +167,15 @@ body.nav-open {
     left: 0;
     right: 0;
     bottom: 0;
+
+    height: 100dvh;
+    min-height: 100vh;
+
     background-color: var(--green);
     background-image: url("./img/hero-bg.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-size: 600px;      /* controls paw size */
+    background-position: top left;
 
     z-index: 1050;
 
@@ -209,9 +213,14 @@ body.nav-open {
     pointer-events: auto;
   }
 
+  body.nav-open .hero {
+    visibility: hidden;
+  }
+
   body.nav-open header {
-    background-color: transparent;
-    box-shadow: none;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
   }
 
   /* hide hero content when mobile menu is open */
