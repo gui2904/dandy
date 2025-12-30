@@ -117,5 +117,216 @@ document.addEventListener("DOMContentLoaded", () => {
       link.remove();
     });
   }
+
+  // ===== PRICES MODAL =====
+  const priceModal = document.getElementById("priceModal");
+  const priceCloseBtn = document.querySelector(".price-close");
+  const priceOpenBtns = document.querySelectorAll(".open-price");
+
+  const priceTitle = document.getElementById("priceModalTitle");
+  const priceSubtitle = document.getElementById("priceModalSubtitle");
+  const priceBody = document.getElementById("priceModalBody");
+
+  // Simple content map (edit text freely)
+  const PRICE_DETAILS = {
+    grooming: {
+      title: "Full Grooming",
+      subtitle: "Full Grooming · Starting at $120",
+      prices: [
+        { label: "Extra Small Dogs (up to 15 lbs)", value: "$120" },
+        { label: "Small Dogs (16-25 lbs)", value: "$140" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$165" },
+        { label: "Large Dogs (41-61 lb)", value: "$180" },
+        { label: "XL Dogs (61+ lb)", value: "$200" }
+      ],
+      body: `
+        <div class="price-detail-block">
+          <h3>What’s included</h3>
+          <ul>
+            <li>Blow Dry + Thorough Brush & Comb Out</li>
+            <li>Ear Cleaning</li>
+            <li>Nail Clipping & Buffing</li>
+            <li>Paw Pad Trim</li>
+            <li>Sanitary Trim</li>
+          </ul>
+
+          <h3>Hairstyles</h3>
+          <ul>
+            <li>Light Trims</li>
+            <li>Hand Scissored Trims</li>
+            <li>Breed Standard Patterns</li>
+            <li>Short Styles</li>
+            <li>Accessory</li>
+          </ul>
+
+          <h3>Breed examples</h3>
+          <p>Yorkie, Maltese, Shih-tzu, Collies, Shelties, Westies, Golden Retrievers, etc.</p>
+
+          <h3>Pricing notes</h3>
+          <p>
+            Final price depends on breed, coat condition, size, and behavior.
+            Matting may require extra time and may add a dematting fee.
+          </p>
+        </div>
+      `
+    },
+
+    bathing: {
+      title: "Bathing",
+      subtitle: "Short Hair Bath · Starting at $70",
+      prices: [
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$70" },
+        { label: "Small Dogs (16-25 lbs)", value: "$90" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$110" },
+        { label: "Large Dogs (41-60 lbs)", value: "$135" },
+        { label: "XL Dogs (61+ lbs)", value: "$155" }
+      ],
+      body: `
+        <div class="price-detail-block">
+          <h3>What’s included</h3>
+          <ul>
+            <li>Skin/coat-appropriate Shampoo & Conditioner</li>
+            <li>Blow Dry</li>
+            <li>Thorough Brush & Comb Out</li>
+            <li>De-shedding (if applicable)</li>
+            <li>Ear Cleaning</li>
+            <li>Nail Clipping & Buffing</li>
+            <li>Paw Pad Trim (if applicable)</li>
+            <li>Sanitary Trim (if applicable)</li>
+            <li>Accessory</li>
+          </ul>
+
+          <h3>Breed Examples</h3>
+          <p>Pitbull, Bulldog, Boxer, Coonhound, Beagle, Mastiff, Pug, etc.</p>
+
+          <h3>Pricing notes</h3>
+          <p>
+            Final price depends on breed, coat condition, size, and behavior.
+            Matting may require extra time and may add a dematting fee.
+          </p>
+        </div>
+      `
+    },
+
+    bath_tidy: {
+      title: "Bath & Tidy",
+      subtitle: "Bath & Tidy · Starting at $90",
+      prices: [
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$90+" },
+        { label: "Small Dogs (16-25 lbs)", value: "$115" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$130" },
+        { label: "Large Dogs (41–60 lbs)", value: "$145" },
+        { label: "XL Dogs (61+ lbs)", value: "$170" }
+      ],
+      body: `
+        <div class="price-detail-block">
+          <h3>What’s included</h3>
+          <ul>
+            <li>Skin/coat-appropriate Shampoo & Conditioner</li>
+            <li>Blow Dry</li>
+            <li>Thorough Brush & Comb Out</li>
+            <li>Ear Cleaning</li>
+            <li>Nail Clipping & Buffing</li>
+            <li>Paw Pad Trim (if applicable)</li>
+            <li>Sanitary Trim (if applicable)</li>
+            <li>Face & Feet Trim</li>
+            <li>Accessory</li>
+          </ul>
+
+          <h3>Pricing notes</h3>
+          <p>
+            Final price depends on breed, coat condition, size, and behavior.
+            Matting may require extra time and may add a dematting fee.
+          </p>
+        </div>
+      `
+    },
+
+    flea_tick: {
+      title: "Flea & Tick Treatment",
+      subtitle: "Add-on service · +$20 (when added to an appointment)",
+      prices: [
+        { label: "Add-on to any service", value: "+$20" }
+      ],
+      body: `
+        <div class="price-detail-block">
+          <h3>What’s included</h3>
+          <ul>
+            <li>Gentle flea & tick shampoo / treatment</li>
+            <li>Extra rinse + coat check</li>
+          </ul>
+
+          <h3>Important</h3>
+          <p>
+            For heavy infestations, we may recommend a vet-approved treatment plan.
+          </p>
+        </div>
+      `
+    }
+  };
+
+  function openPriceModal(key) {
+    const data = PRICE_DETAILS[key] || {
+      title: "Service Details",
+      subtitle: "",
+      body: "<p>Details coming soon.</p>"
+    };
+
+    priceTitle.textContent = data.title;
+    priceSubtitle.textContent = data.subtitle;
+
+    const pricesHTML = (data.prices && data.prices.length)
+      ? `
+        <div class="price-breakdown">
+          <h3>Price breakdown</h3>
+          <ul class="price-breakdown-list">
+	    ${data.prices.map(p => `<li><span>${p.label}</span><strong>${p.value}</strong></li>`).join("")}
+          </ul>
+          <p class="price-small-note">Prices are estimates. Exact total depends on coat condition, behavior, and time required.</p>
+        </div>
+      `
+      : "";
+
+    priceBody.innerHTML = pricesHTML + data.body;
+      
+    priceModal.classList.add("show");
+    priceModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+
+    // Focus the close button for accessibility
+    priceCloseBtn && priceCloseBtn.focus();
+  }
+
+  function closePriceModal() {
+    priceModal.classList.remove("show");
+    priceModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  if (priceModal && priceOpenBtns.length > 0) {
+    priceOpenBtns.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const key = btn.getAttribute("data-price");
+        openPriceModal(key);
+      });
+    });
+
+    // Close by X
+    priceCloseBtn && priceCloseBtn.addEventListener("click", closePriceModal);
+
+    // Close by clicking overlay background
+    priceModal.addEventListener("click", (e) => {
+      if (e.target === priceModal) closePriceModal();
+    });
+
+    // Close on ESC (only if this modal is open)
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && priceModal.classList.contains("show")) {
+        closePriceModal();
+      }
+    });
+  }
+
     
 });

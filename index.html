@@ -15,7 +15,7 @@
     <header>
       <div class="container">
 	<div class="logo">
-	  <a href="#"><img id="logoText" src="./img/winni2.png" alt="logo"></a>
+	  <a href="#"><img id="logoText" src="./img/winni2.webp" alt="logo"></a>
 	</div>
 
 	<!-- HAMBURGER BUTTON (shown on mobile) -->
@@ -45,7 +45,7 @@
 	<a href="#" class="btn open-booking">BOOK NOW</a>
       </div>
       <div class="hero-img">
-	<img src="./img/hero-dog.png" alt="happy dog" />
+	<img src="./img/hero-dog.webp" alt="happy dog" />
       </div>
     </section>
 
@@ -54,72 +54,112 @@
       <div class="about-content">
 	<div class="about-text">
 	  <h2>ABOUT US</h2>
-	  <p>Hi! I’m Giovanna, the heart behind Winnie Paws. A mobile pet stylist dedicated to comfort, wellness, and gentle grooming.</p>
-	  <p>I’ve always treated dogs like family, and that’s exactly how I care for every pup I meet. My approach is loving, patient, and detail-oriented, turning grooming into a calm and positive experience. More than a service, it’s personal care with intention. The same way I care for my own dogs.</p>
-	  <p>When your pet is with me, they’re safe, loved, and beautifully styled.</p>
-	  <p class="last">Fresh fur, happy paws, and lots of love! That’s the Winnie Paws way.</p>
-	  <a href="#contact" class="btn">LEARN MORE</a>
+
+	  <div class"about-text-box">
+	    <p>Hi! I’m Giovanna, the heart behind Winnie Paws. A mobile pet stylist dedicated to comfort, wellness, and gentle grooming.</p>
+	    <p>I’ve always treated dogs like family, and that’s exactly how I care for every pup I meet. My approach is loving, patient, and detail-oriented, turning grooming into a calm and positive experience. More than a service, it’s personal care with intention. The same way I care for my own dogs.</p>
+	    <p>When your pet is with me, they’re safe, loved, and beautifully styled.</p>
+	    <p class="last">Fresh fur, happy paws, and lots of love! That’s the Winnie Paws way.</p>
+
+	    <a href="#contact" class="btn">LEARN MORE</a>
+	  </div>
 	</div>
 	<div class="about-img">
-	  <img src="./img/about-dog.png" alt="dog with sunglasses" />
+	  <img src="./img/about-dog.webp" alt="dog with sunglasses" />
 	</div>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicos" class="services"> 
-      <h2>OUR SERVICES</h2>
-      <div class="service-cards">
+    <!-- SERVICES + PRICES (ONE SECTION) -->
+    <section id="servicos" class="services-pricing">
+      <!-- SERVICES -->
+      <div class="block">
+	<h2>OUR SERVICES</h2>
 
-	<!-- GROOMING -->
-	<div class="card">
-	  <img src="./img/services1.jpg" alt="grooming dog">
-	  <h3>GROOMING</h3>
-	  <p>Full groom with bath, haircut, nails, and paw care.</p>
-	  <a href="#"
-             class="btn open-booking"
-             data-service="grooming">BOOK NOW</a>
+	<div class="service-cards">
+	  <div class="card">
+            <img src="./img/services1.webp" alt="grooming dog">
+            <h3>GROOMING</h3>
+            <p>Full groom with bath, haircut, nails, and paw care.</p>
+            <a href="#" class="btn open-booking" data-service="grooming">BOOK NOW</a>
+	  </div>
+
+	  <div class="card">
+            <img src="./img/services2.webp" alt="bathing dog">
+            <h3>BATHING</h3>
+            <p>Gentle bath, blow-dry, <br>and brush for a fresh, clean coat.</p>
+            <a href="#" class="btn open-booking" data-service="bathing">BOOK NOW</a>
+	  </div>
+
+	  <div class="card">
+            <img src="./img/services3.webp" alt="bath and tidy">
+            <h3>BATH AND TIDY</h3>
+            <p>Bath plus light trim to keep face, feet, and sanitary <br>areas neat.</p>
+            <a href="#" class="btn open-booking" data-service="bath_tidy">BOOK NOW</a>
+	  </div>
+
+	  <div class="card">
+            <img src="./img/services4.webp" alt="flea and tick treatment">
+            <h3>FLEA AND TICK TREATMENT</h3>
+            <p>Protect your pup with our gentle yet effective flea and tick treatment.</p>
+            <a href="#" class="btn open-booking" data-service="flea_tick">BOOK NOW</a>
+	  </div>
+	</div>
+      </div>
+
+      <!-- PRICES -->
+      <div id="prices" class="block prices-block">
+	<h2>OUR PRICES</h2>
+
+	<div class="price-cards">
+	  <div class="price-card">
+            <h3>GROOMING</h3>
+            <p class="price-sub">Basic Full Groom & Full Groom</p>
+            <div class="price-range"><span>Starting at</span><strong>$120</strong></div>
+            <a href="#" class="btn open-price" data-price="grooming">LEARN MORE</a>
+	  </div>
+
+	  <div class="price-card">
+            <h3>BATHING</h3>
+            <p class="price-sub">Short Hair Bath & Double Coated Bath + Deshed</p>
+            <div class="price-range"><span>Starting at</span><strong>$70</strong></div>
+	    <a href="#" class="btn open-price" data-price="bathing">LEARN MORE</a>
+	  </div>
+
+	  <div class="price-card">
+	    <h3>BATH & TIDY</h3>
+	    <p class="price-sub">Bath & Tidy (Bath, Blow-Dry, Nails, Ears, Paw Trim — No Haircut)</p>
+	    <div class="price-range"><span>Starting at</span><strong>$90</strong></div>
+	    <a href="#" class="btn open-price" data-price="bath_tidy">LEARN MORE</a>
+	  </div>
+
+	  <div class="price-card">
+            <h3>FLEA &amp; TICK</h3>
+            <p class="price-sub">Gentle treatment (add-on to any service)</p>
+            <div class="price-range"><span>Add-on</span><strong>+$20</strong></div>
+            <a href="#" class="btn open-price" data-price="flea_tick">LEARN MORE</a>
+	  </div>
 	</div>
 
-	<!-- BATHING -->
-	<div class="card">
-	  <img src="./img/services2.jpg" alt="bathing dog">
-	  <h3>BATHING</h3>
-	  <p>Gentle bath, blow-dry, <br>and brush for a fresh, clean coat.</p>
-	  <a href="#"
-             class="btn open-booking"
-             data-service="bathing">BOOK NOW</a>
+	<div class="prices-footer">
+	  <div class="prices-footer-box">
+            <h4>Popular add-ons</h4>
+            <ul>
+              <li>Teeth Brushing — $15</li>
+              <li>Flea & Tick Treatment — $70</li>
+              <li>Dematting Fee — $30–$80 (Depends on the coat)</li>
+            </ul>
+	  </div>
 	</div>
-
-	<!-- BATH AND TIDY -->
-	<div class="card">
-	  <img src="./img/services3.jpg" alt="bath and tidy">
-	  <h3>BATH AND TIDY</h3>
-	  <p>Bath plus light trim to keep face, feet, and sanitary <br>areas neat.</p>
-	  <a href="#"
-             class="btn open-booking"
-             data-service="bath_tidy">BOOK NOW</a>
-	</div>
-
-	<!-- FLEA AND TICK TREATMENT -->
-	<div class="card">
-	  <img src="./img/services4.jpg" alt="flea and tick treatment">
-	  <h3>FLEA AND TICK TREATMENT</h3>
-	  <p>Protect your pup with our gentle yet effective flea and tick treatment.</p>
-	  <a href="#"
-             class="btn open-booking"
-             data-service="flea_tick">BOOK NOW</a>
-	</div>
-	
-
       </div>
     </section>
+  
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">
       <div class="contact-inner">
 	<h2>CONTACT US</h2>
-	<p><strong>Phone:</strong> (754) 293-7221</p>
+	<p><strong>Phone:</strong> (728) 240-2867</p>
 	<p><strong>Location:</strong> Pompano, FL</p>
 	<p><strong>Hours:</strong> Mon–Sat · 9am–6pm</p>
 	<a href="#" class="btn open-booking">BOOK AN APPOINTMENT</a>
@@ -160,7 +200,28 @@
             DOWNLOAD CONSENT FORM
 	  </a>
 
-	  <small>Questions? Text us at (754) 293-7221 💗</small>
+	  <small>Questions? Text us at (728) 240-2867 💗</small>
+	</div>
+      </div>
+    </div>
+
+    <!-- PRICES MODAL -->
+    <div id="priceModal" class="price-modal-overlay" aria-hidden="true">
+      <div class="price-modal-card" role="dialog" aria-modal="true" aria-labelledby="priceModalTitle">
+	<button class="price-close" aria-label="Close pricing popup">&times;</button>
+
+	<div class="price-header">
+	  <h2 id="priceModalTitle">Service Details</h2>
+	  <p id="priceModalSubtitle">What’s included + pricing notes</p>
+	</div>
+
+	<div class="price-body" id="priceModalBody">
+	  <!-- injected content -->
+	</div>
+
+	<div class="price-footer">
+	  <a href="#" class="btn open-booking">BOOK NOW</a>
+	  <small>Questions? Text us at (728) 240-2867 💗</small>
 	</div>
       </div>
     </div>
