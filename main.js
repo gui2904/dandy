@@ -243,22 +243,37 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     flea_tick: {
-      title: "Flea & Tick Treatment",
-      subtitle: "Add-on service · +$20 (when added to an appointment)",
+      title: "Double Coated Bath & Deshed",
+      subtitle: "Double Coated Bath & Deshed – PREMIUM · Starting at $115",
       prices: [
-        { label: "Add-on to any service", value: "+$20" }
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$115" },
+        { label: "Small Dogs (16-25 lbs)", value: "$130" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$145" },
+        { label: "Large Dogs (41–60 lbs)", value: "$175" },
+        { label: "XL Dogs (61+ lbs)", value: "$195" }
       ],
       body: `
         <div class="price-detail-block">
           <h3>What’s included</h3>
           <ul>
-            <li>Gentle flea & tick shampoo / treatment</li>
-            <li>Extra rinse + coat check</li>
+            <li>Skin/coat-appropriate Shampoo & Conditioner</li>
+            <li>Blow Dry</li>
+            <li>Thorough Brush & Comb Out</li>
+            <li>De-shedding</li>
+            <li>Ear Cleaning</li>
+            <li>Nail Clipping & Buffing</li>
+            <li>Paw Pad Trim (if applicable)</li>
+            <li>Sanitary Trim (if applicable)</li>
+            <li>Accessory</li>
           </ul>
 
-          <h3>Important</h3>
+          <h3>Breed Examples</h3>
+          <p>German Shepherd, husky, Shiba-Inu, etc.</p>
+
+          <h3>Pricing notes</h3>
           <p>
-            For heavy infestations, we may recommend a vet-approved treatment plan.
+            Final price depends on breed, coat condition, size, and behavior.
+            Matting may require extra time and may add a dematting fee.
           </p>
         </div>
       `
