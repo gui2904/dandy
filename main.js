@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <li>Nail Clipping & Buffing</li>
             <li>Paw Pad Trim</li>
             <li>Sanitary Trim</li>
+            <li>Full Body Groom</li>
           </ul>
 
           <h3>Hairstyles</h3>
@@ -212,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Bath & Tidy",
       subtitle: "Bath & Tidy · Starting at $90",
       prices: [
-        { label: "X-Small Dogs (up to 15 lbs)", value: "$90+" },
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$90" },
         { label: "Small Dogs (16-25 lbs)", value: "$115" },
         { label: "Medium Dogs (26-40 lbs)", value: "$130" },
         { label: "Large Dogs (41–60 lbs)", value: "$145" },
@@ -233,6 +234,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <li>Accessory</li>
           </ul>
 
+          <h3>Breed Examples</h3>
+          <p>Yorkie, poodle , doodle, Maltese , Havanese, etc.</p>
+
           <h3>Pricing notes</h3>
           <p>
             Final price depends on breed, coat condition, size, and behavior.
@@ -243,8 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     flea_tick: {
-      title: "Double Coated Bath & Deshed",
-      subtitle: "Double Coated Bath & Deshed – PREMIUM · Starting at $115",
+      title: "Double Coated Bath & De-shed",
+      subtitle: "Double Coated Bath & De-shed – PREMIUM · Starting at $115",
       prices: [
         { label: "X-Small Dogs (up to 15 lbs)", value: "$115" },
         { label: "Small Dogs (16-25 lbs)", value: "$130" },
@@ -268,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </ul>
 
           <h3>Breed Examples</h3>
-          <p>German Shepherd, husky, Shiba-Inu, etc.</p>
+          <p>German Shepherd, Husky, Shiba-inu, etc.</p>
 
           <h3>Pricing notes</h3>
           <p>
