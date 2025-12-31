@@ -17,6 +17,11 @@
     --text-dark: #4b4b4b;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* header height */
+}
+
 body {
   font-family: arial, helvetica, sans-serif;
   background-color: #fff;
@@ -76,7 +81,7 @@ header .container {
 }
 
 .navbar a:hover {
-  color: #ffffff;
+  color: var(--pink-dark);
 }
 
 .nav-btn {
