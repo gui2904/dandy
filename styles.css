@@ -171,11 +171,7 @@ body.nav-open {
     height: 100dvh;
     min-height: 100vh;
 
-    background-color: var(--green);
-    background-image: url("./img/hero-bg.webp");
-    background-repeat: repeat;
-    background-size: 600px;      /* controls paw size */
-    background-position: top left;
+    background: none;
 
     z-index: 1050;
 
@@ -188,6 +184,18 @@ body.nav-open {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+  }
+
+  .navbar::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: var(--green);
+    background-image: url("./img/hero-bg.webp");
+    background-repeat: repeat;
+    background-size: 960px; /* or clamp(...) */
+    background-position: top left;
+    z-index: -1;
   }
 
   .navbar ul {
