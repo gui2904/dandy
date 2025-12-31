@@ -294,6 +294,16 @@ body.nav-open {
   transform: translatey(-2px);
 }
 
+.btn-primary {
+  background-color: var(--pink-dark); /* #e29494 */
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background-color: #d97f7f; /* slightly darker */
+}
+
 .hero-img img {
   width: 420px; /* larger dog image */
   border: none; 
@@ -345,7 +355,7 @@ body.nav-open {
   }
 
   .hero-img {
-    marin-bottom: 0px;
+    margin-bottom: 0px;
   }
   
   .hero-img img {
@@ -397,7 +407,6 @@ body.nav-open {
 }
 
 .about-text-box {
-  background-color: solid #f2cdc5;     /* solid block with no paws */
   padding: 30px 32px;
   border-radius: 18px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
@@ -1131,9 +1140,35 @@ body.nav-open {
 
   .booking-body {
     flex: 1 1 auto;
-    overflow-y: auto;
+    min-height: 0;
+    padding: 12px;
+    overflow: hidden; /* no modal scroll */
+  }
+
+  .calendly-inline-widget {
+    height: 100%;
+    min-height: 0;
+    overflow: auto;     /* ← Calendly scrolls */
     -webkit-overflow-scrolling: touch;
-    min-height: 0; /* important for Safari flexbox scroll */
+  }
+
+  /* Let Calendly occupy the full available height */
+  #calendly-inline-container.calendly-inline-widget {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden; /* IMPORTANT */
+  }
+
+  /* Make the Calendly iframe scroll instead */
+  #calendly-inline-container.calendly-inline-widget iframe {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .booking-modal-card {
+    overflow: hidden;  /* ← no scrolling here */
   }
 
   .booking-header {
