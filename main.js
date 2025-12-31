@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Full Grooming",
       subtitle: "Full Grooming · Starting at $120",
       prices: [
-        { label: "Extra Small Dogs (up to 15 lbs)", value: "$120" },
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$120" },
         { label: "Small Dogs (16-25 lbs)", value: "$140" },
         { label: "Medium Dogs (26-40 lbs)", value: "$165" },
         { label: "Large Dogs (41-61 lb)", value: "$180" },
