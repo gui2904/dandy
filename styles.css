@@ -1051,7 +1051,7 @@ body.nav-open {
 .booking-body {
   background: #ffffff;
   padding: 16px;
-  overflow-y: auto;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
   flex: 1; /* take available vertical space */
 }
@@ -1063,6 +1063,14 @@ body.nav-open {
   overflow: hidden;
   border: 2px solid #ffd7e6;
   background-color: #fff5f7; /* behind iframe load flash */
+  padding: 0;
+}
+
+.calendly-inline-widget iframe {
+  display: block;            /* removes inline iframe gaps */
+  width: 100% !important;
+  height: 100% !important;   /* key */
+  border: 0 !important;
 }
 
 /* footer of popup */
@@ -1114,6 +1122,20 @@ body.nav-open {
   color: var(--pink);
 }
 
+/* DESKTOP/TABLET: give the widget a real height so iframe 100% works */
+#calendly-inline-container.calendly-inline-widget {
+  height: 600px;      /* pick what you like: 600–700 */
+  min-height: 600px;
+}
+
+/* iframe fills the widget */
+#calendly-inline-container.calendly-inline-widget iframe {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+}
+
 /* booking modal – phones full-screen */
 @media (max-width: 600px) {
   .booking-modal-overlay {
@@ -1155,7 +1177,7 @@ body.nav-open {
   /* Let Calendly occupy the full available height */
   #calendly-inline-container.calendly-inline-widget {
     height: 100%;
-    min-height: 100%;
+    min-height: 0;
     overflow: hidden; /* IMPORTANT */
   }
 
