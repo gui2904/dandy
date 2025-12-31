@@ -1177,7 +1177,9 @@ body.nav-open {
   /* Let Calendly occupy the full available height */
   #calendly-inline-container.calendly-inline-widget {
     height: 100%;
-    min-height: 0;
+    width: 108.7%;
+    transform: scale(0.92);
+    transform-origin: top center;
     overflow: hidden; /* IMPORTANT */
   }
 
@@ -1194,8 +1196,11 @@ body.nav-open {
   }
 
   .booking-header {
-    padding: 40px 24px 16px 24px;   /* a bit of top spacing */
+    padding: 18px 16px 10px;   /* a bit of top spacing */
   }
+
+  .booking-footer { padding: 10px 16px; }
+  .booking-footer .btn { min-width: 220px; padding: 12px 22px;
 
   .booking-close {
     top: 12px;
@@ -1208,7 +1213,7 @@ body.nav-open {
   }
 
   .booking-header h2 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .booking-header p {
