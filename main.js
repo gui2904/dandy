@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     Calendly.initInlineWidget({
-      url: "https://calendly.com/winniepaws2323/new-meeting?hide_gdpr_banner=1&background_color=f2cdc5&text_color=5b5b5b&primary_color=808e5d",
+      url: "https://calendly.com/winniepaws2323/new-meeting?hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=e29494",
       parentElement: document.getElementById("calendly-inline-container"),
       prefill: {},
       utm: {}
