@@ -184,18 +184,18 @@ body.nav-open {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-  }
 
-  .navbar::before {
-    content: "";
-    position: fixed;
-    inset: 0;
+    /* moved bg from ::before to navbar itself (fixes iOS repaint bug) */
     background-color: var(--green);
     background-image: url("./img/hero-bg.webp");
     background-repeat: repeat;
-    background-size: 960px; /* or clamp(...) */
+    background-size: 960px;
     background-position: top left;
-    z-index: -1;
+
+    /* force iOS Safari to paint this layer immediately */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform, opacity;
   }
 
   .navbar ul {
@@ -1194,7 +1194,7 @@ body.nav-open {
   }
 
   .booking-header {
-    padding: 40x 24px 16px 24px;   /* a bit of top spacing */
+    padding: 40px 24px 16px 24px;   /* a bit of top spacing */
   }
 
   .booking-close {
