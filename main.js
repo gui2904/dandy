@@ -307,6 +307,9 @@ document.addEventListener("DOMContentLoaded", () => {
       : "";
 
     priceBody.innerHTML = pricesHTML + data.body;
+
+    priceBody.scrollTop = 0;   
+    priceBody.scrollTo({ top: 0, left: 0, behavior: "auto" });
       
     priceModal.classList.add("show");
     priceModal.setAttribute("aria-hidden", "false");

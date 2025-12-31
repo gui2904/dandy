@@ -194,7 +194,7 @@ body.nav-open {
     background-color: var(--green);
     background-image: url("./img/hero-bg.webp");
     background-repeat: repeat;
-    background-size: 960px;
+    background-size: 1400px;
     background-position: top left;
 
     /* force iOS Safari to paint this layer immediately */
