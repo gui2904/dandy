@@ -395,7 +395,7 @@ body.nav-open {
 .about-text h2 {
   color: var(--green-dark);
   font-size: 38px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .about-text p {
