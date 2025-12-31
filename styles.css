@@ -414,7 +414,6 @@ body.nav-open {
 .about-text-box {
   padding: 30px 32px;
   border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
 /* about responsiveness */
