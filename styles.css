@@ -993,6 +993,8 @@ body.nav-open {
 /* ===== BOOKING MODAL CARD ===== */
 .booking-modal-card {
   background: #ffffff;
+  max-height: 90vh;
+  height: 90vh;
   max-width: 900px;
   width: 100%;
   border-radius: 24px;
@@ -1057,12 +1059,13 @@ body.nav-open {
   padding: 16px;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  flex: 1; /* take available vertical space */
+  flex: 1 1 auto; /* take available vertical space */
 }
 
 .calendly-inline-widget {
   width: 100%;
-  min-height: 600px;
+  height: 100%;
+  min-height: 0;
   border-radius: 16px;
   overflow: hidden;
   border: 2px solid #ffd7e6;
@@ -1128,8 +1131,8 @@ body.nav-open {
 
 /* DESKTOP/TABLET: give the widget a real height so iframe 100% works */
 #calendly-inline-container.calendly-inline-widget {
-  height: 600px;      /* pick what you like: 600–700 */
-  min-height: 600px;
+  height: 100%;      /* pick what you like: 600–700 */
+  min-height: 0;
 }
 
 /* iframe fills the widget */
