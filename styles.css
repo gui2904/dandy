@@ -1059,7 +1059,7 @@ body.nav-open {
   padding: 16px;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  flex: 1 1 auto; /* take available vertical space */
+  flex: 1 1 auto; /* take available vertical space. */
 }
 
 .calendly-inline-widget {
