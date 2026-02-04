@@ -131,13 +131,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const PRICE_DETAILS = {
     grooming: {
       title: "Full Grooming",
-      subtitle: "Full Grooming · Starting at $120",
+      subtitle: "Full Grooming · Starting at $75",
       prices: [
-        { label: "X-Small Dogs (up to 15 lbs)", value: "$100" },
-        { label: "Small Dogs (16-25 lbs)", value: "$120" },
-        { label: "Medium Dogs (26-40 lbs)", value: "$140" },
-        { label: "Large Dogs (41-60 lb)", value: "$180" },
-        { label: "XL Dogs (61+ lb)", value: "$200" }
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$75" },
+        { label: "Small Dogs (16-25 lbs)", value: "$90" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$120" },
+        { label: "Large Dogs (41-60 lb)", value: "$140" },
+        { label: "XL Dogs (61+ lb)", value: "$160" }
       ],
       body: `
         <div class="price-detail-block">
@@ -174,13 +174,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     bathing: {
       title: "Bathing",
-      subtitle: "Short Hair Bath · Starting at $70",
+      subtitle: "Short Hair Bath · Starting at $55",
       prices: [
-        { label: "X-Small Dogs (up to 15 lbs)", value: "$70" },
-        { label: "Small Dogs (16-25 lbs)", value: "$90" },
-        { label: "Medium Dogs (26-40 lbs)", value: "$110" },
-        { label: "Large Dogs (41-60 lbs)", value: "$135" },
-        { label: "XL Dogs (61+ lbs)", value: "$155" }
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$55" },
+        { label: "Small Dogs (16-25 lbs)", value: "$75" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$100" },
+        { label: "Large Dogs (41-60 lbs)", value: "$120" },
+        { label: "XL Dogs (61+ lbs)", value: "$140" }
       ],
       body: `
         <div class="price-detail-block">
@@ -248,13 +248,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     flea_tick: {
       title: "Double Coated Bath & De-shed",
-      subtitle: "Double Coated Bath & De-shed – PREMIUM · Starting at $115",
+      subtitle: "Double Coated Bath & De-shed – PREMIUM · Starting at $75",
       prices: [
-        { label: "X-Small Dogs (up to 15 lbs)", value: "$115" },
-        { label: "Small Dogs (16-25 lbs)", value: "$130" },
-        { label: "Medium Dogs (26-40 lbs)", value: "$145" },
-        { label: "Large Dogs (41–60 lbs)", value: "$175" },
-        { label: "XL Dogs (61+ lbs)", value: "$195" }
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$75" },
+        { label: "Small Dogs (16-25 lbs)", value: "$90" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$110" },
+        { label: "Large Dogs (41–60 lbs)", value: "$130" },
+        { label: "XL Dogs (61+ lbs)", value: "$150" }
       ],
       body: `
         <div class="price-detail-block">
