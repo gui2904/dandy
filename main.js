@@ -211,13 +211,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     bath_tidy: {
       title: "Bath & Tidy",
-      subtitle: "Bath & Tidy · Starting at $80",
+      subtitle: "Bath & Tidy · Starting at $60",
       prices: [
-        { label: "X-Small Dogs (up to 15 lbs)", value: "$80" },
-        { label: "Small Dogs (16-25 lbs)", value: "$95" },
-        { label: "Medium Dogs (26-40 lbs)", value: "$110" },
-        { label: "Large Dogs (41–60 lbs)", value: "$145" },
-        { label: "XL Dogs (61+ lbs)", value: "$170" }
+        { label: "X-Small Dogs (up to 15 lbs)", value: "$60" },
+        { label: "Small Dogs (16-25 lbs)", value: "$70" },
+        { label: "Medium Dogs (26-40 lbs)", value: "$100" },
+        { label: "Large Dogs (41–60 lbs)", value: "$120" },
+        { label: "XL Dogs (61+ lbs)", value: "$140" }
       ],
       body: `
         <div class="price-detail-block">
