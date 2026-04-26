@@ -1,23 +1,24 @@
-// Wrap everything so it runs after the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   // ===== BOOKING MODAL =====
   let calendlyInitialized = false;
   const openBtns = document.querySelectorAll(".open-booking");
-  const modal    = document.getElementById("bookingModal");
+  const modal = document.getElementById("bookingModal");
   const closeBtn = document.querySelector(".booking-close");
 
   function initCalendlyWidget() {
     if (calendlyInitialized) return;
 
-    // Calendly script may not be ready yet – retry until it is.
     if (!window.Calendly) {
       setTimeout(initCalendlyWidget, 150);
       return;
     }
 
+    const calendlyContainer = document.getElementById("calendly-inline-container");
+    if (!calendlyContainer) return;
+
     Calendly.initInlineWidget({
-	url: "https://calendly.com/winniepaws2323/new-meeting?hide_gdpr_banner=1&background_color=fffaf5&text_color=000000&primary_color=e29494",
-      parentElement: document.getElementById("calendly-inline-container"),
+      url: "https://calendly.com/winniepaws2323/new-meeting?hide_gdpr_banner=1&background_color=fffaf5&text_color=000000&primary_color=e29494",
+      parentElement: calendlyContainer,
       prefill: {},
       utm: {}
     });
@@ -26,26 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (modal && closeBtn && openBtns.length > 0) {
-    // open modal
     openBtns.forEach(btn => {
-      btn.addEventListener("click", function (e) {
+      btn.addEventListener("click", e => {
         e.preventDefault();
         modal.classList.add("show");
         document.body.style.overflow = "hidden";
-
-        // always call the safe initializer
         initCalendlyWidget();
       });
     });
 
-    // close modal by X
-    closeBtn.addEventListener("click", function () {
+    closeBtn.addEventListener("click", () => {
       modal.classList.remove("show");
       document.body.style.overflow = "";
     });
 
-    // close modal by clicking outside the card
-    modal.addEventListener("click", function (e) {
+    modal.addEventListener("click", e => {
       if (e.target === modal) {
         modal.classList.remove("show");
         document.body.style.overflow = "";
@@ -54,13 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===== NAV / HEADER / HAMBURGER =====
-  const body      = document.body;
-  const header    = document.querySelector("header");
+  const body = document.body;
+  const header = document.querySelector("header");
   const navToggle = document.querySelector(".nav-toggle");
-  const navLinks  = document.querySelectorAll(".navbar a");
+  const navLinks = document.querySelectorAll(".navbar a");
 
   if (header) {
-    // Header scroll behaviour (only when menu is NOT open)
     window.addEventListener("scroll", () => {
       if (body.classList.contains("nav-open")) return;
 
@@ -73,14 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (navToggle) {
-    // Hamburger toggle
     navToggle.addEventListener("click", () => {
       const willOpen = !body.classList.contains("nav-open");
 
       if (willOpen) {
-        // jump to top so overlay always starts from top of page
         window.scrollTo(0, 0);
-        // keep header in "not scrolled" look while menu is open
         header && header.classList.remove("scrolled");
       }
 
@@ -90,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (navLinks.length > 0) {
-    // Close menu when clicking a nav link
     navLinks.forEach(link => {
       link.addEventListener("click", () => {
         body.classList.remove("nav-open");
@@ -99,17 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // CONSENT FORM BUTTON LOGIC
+  // ===== CONSENT FORM BUTTON =====
   const consentBtn = document.querySelector(".consent-btn");
 
   if (consentBtn) {
-    consentBtn.addEventListener("click", (e) => {
+    consentBtn.addEventListener("click", e => {
       e.preventDefault();
 
-      const file = "./winnie-paws-consent-1.pdf";
-
       const link = document.createElement("a");
-      link.href = file;
+      link.href = "./winnie-paws-consent-1.pdf";
       link.download = "winnie-paws-consent-1.pdf";
       link.target = "_blank";
       document.body.appendChild(link);
@@ -118,16 +107,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== PRICES MODAL =====
+  // ===== PRICE / MEMBERSHIP MODAL =====
   const priceModal = document.getElementById("priceModal");
   const priceCloseBtn = document.querySelector(".price-close");
   const priceOpenBtns = document.querySelectorAll(".open-price");
+  const membershipPricingBtns = document.querySelectorAll(".view-pricing");
 
   const priceTitle = document.getElementById("priceModalTitle");
   const priceSubtitle = document.getElementById("priceModalSubtitle");
   const priceBody = document.getElementById("priceModalBody");
 
-  // Simple content map (edit text freely)
   const PRICE_DETAILS = {
     grooming: {
       title: "Full Grooming",
@@ -151,23 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <li>Full Body Groom</li>
           </ul>
 
-          <h3>Hairstyles</h3>
-          <ul>
-            <li>Light Trims</li>
-            <li>Hand Scissored Trims</li>
-            <li>Breed Standard Patterns</li>
-            <li>Short Styles</li>
-            <li>Accessory</li>
-          </ul>
-
-          <h3>Breed examples</h3>
-          <p>Yorkie, Maltese, Shih-tzu, Collies, Shelties, Westies, Golden Retrievers, etc.</p>
-
           <h3>Pricing notes</h3>
-          <p>
-            Final price depends on breed, coat condition, size, and behavior.
-            Matting may require extra time and may add a dematting fee.
-          </p>
+          <p>Final price depends on breed, coat condition, size, and behavior.</p>
         </div>
       `
     },
@@ -186,25 +160,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="price-detail-block">
           <h3>What’s included</h3>
           <ul>
-            <li>Skin/coat-appropriate Shampoo & Conditioner</li>
+            <li>Shampoo & Conditioner</li>
             <li>Blow Dry</li>
-            <li>Thorough Brush & Comb Out</li>
-            <li>De-shedding (if applicable)</li>
+            <li>Brush & Comb Out</li>
             <li>Ear Cleaning</li>
             <li>Nail Clipping & Buffing</li>
-            <li>Paw Pad Trim (if applicable)</li>
-            <li>Sanitary Trim (if applicable)</li>
-            <li>Accessory</li>
           </ul>
-
-          <h3>Breed Examples</h3>
-          <p>Pitbull, Bulldog, Boxer, Coonhound, Beagle, Mastiff, Pug, etc.</p>
-
-          <h3>Pricing notes</h3>
-          <p>
-            Final price depends on breed, coat condition, size, and behavior.
-            Matting may require extra time and may add a dematting fee.
-          </p>
         </div>
       `
     },
@@ -223,32 +184,19 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="price-detail-block">
           <h3>What’s included</h3>
           <ul>
-            <li>Skin/coat-appropriate Shampoo & Conditioner</li>
+            <li>Bath</li>
             <li>Blow Dry</li>
-            <li>Thorough Brush & Comb Out</li>
-            <li>Ear Cleaning</li>
-            <li>Nail Clipping & Buffing</li>
-            <li>Paw Pad Trim (if applicable)</li>
-            <li>Sanitary Trim (if applicable)</li>
+            <li>Brush & Comb Out</li>
             <li>Face & Feet Trim</li>
-            <li>Accessory</li>
+            <li>Sanitary Trim</li>
           </ul>
-
-          <h3>Breed Examples</h3>
-          <p>Yorkie, poodle , doodle, Maltese , Havanese, etc.</p>
-
-          <h3>Pricing notes</h3>
-          <p>
-            Final price depends on breed, coat condition, size, and behavior.
-            Matting may require extra time and may add a dematting fee.
-          </p>
         </div>
       `
     },
 
     flea_tick: {
       title: "Double Coated Bath & De-shed",
-      subtitle: "Double Coated Bath & De-shed – PREMIUM · Starting at $75",
+      subtitle: "Double Coated Bath & De-shed · Starting at $75",
       prices: [
         { label: "X-Small Dogs (up to 15 lbs)", value: "$75" },
         { label: "Small Dogs (16-25 lbs)", value: "$90" },
@@ -260,95 +208,115 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="price-detail-block">
           <h3>What’s included</h3>
           <ul>
-            <li>Skin/coat-appropriate Shampoo & Conditioner</li>
-            <li>Blow Dry</li>
-            <li>Thorough Brush & Comb Out</li>
+            <li>Double Coat Bath</li>
             <li>De-shedding</li>
+            <li>Blow Dry</li>
+            <li>Brush & Comb Out</li>
             <li>Ear Cleaning</li>
             <li>Nail Clipping & Buffing</li>
-            <li>Paw Pad Trim (if applicable)</li>
-            <li>Sanitary Trim (if applicable)</li>
-            <li>Accessory</li>
           </ul>
-
-          <h3>Breed Examples</h3>
-          <p>German Shepherd, Husky, Shiba-inu, etc.</p>
-
-          <h3>Pricing notes</h3>
-          <p>
-            Final price depends on breed, coat condition, size, and behavior.
-            Matting may require extra time and may add a dematting fee.
-          </p>
         </div>
       `
     }
   };
 
-  function openPriceModal(key) {
-    const data = PRICE_DETAILS[key] || {
-      title: "Service Details",
-      subtitle: "",
-      body: "<p>Details coming soon.</p>"
-    };
+  const MEMBERSHIP_PRICING = {
+    "bath-essential": {
+      title: "Bath & Tidy - Essential",
+      subtitle: "1x per month · Pricing by dog size",
+      prices: [
+        { label: "XS", value: "$55/mo" },
+        { label: "S", value: "$65/mo" },
+        { label: "M", value: "$95/mo" },
+        { label: "L", value: "$110/mo" },
+        { label: "XL", value: "$130/mo" }
+      ]
+    },
 
-    priceTitle.textContent = data.title;
-    priceSubtitle.textContent = data.subtitle;
+    "bath-vip": {
+      title: "Bath & Tidy - VIP",
+      subtitle: "2x per month · Pricing by dog size",
+      prices: [
+        { label: "XS", value: "$100/mo" },
+        { label: "S", value: "$120/mo" },
+        { label: "M", value: "$180/mo" },
+        { label: "L", value: "$210/mo" },
+        { label: "XL", value: "$250/mo" }
+      ]
+    }
+  };
 
-    const pricesHTML = (data.prices && data.prices.length)
+  function openModalWithData(data) {
+    if (!priceModal || !priceTitle || !priceSubtitle || !priceBody) return;
+
+    priceTitle.textContent = data.title || "Service Details";
+    priceSubtitle.textContent = data.subtitle || "";
+
+    const pricesHTML = data.prices?.length
       ? `
         <div class="price-breakdown">
           <h3>Price breakdown</h3>
           <ul class="price-breakdown-list">
-	    ${data.prices.map(p => `<li><span>${p.label}</span><strong>${p.value}</strong></li>`).join("")}
+            ${data.prices.map(p => `
+              <li>
+                <span>${p.label}</span>
+                <strong>${p.value}</strong>
+              </li>
+            `).join("")}
           </ul>
-          <p class="price-small-note">Prices are estimates. Exact total depends on coat condition, behavior, and time required.</p>
         </div>
       `
       : "";
 
-    priceBody.innerHTML = pricesHTML + data.body;
+    priceBody.innerHTML = pricesHTML + (data.body || "");
 
-    priceBody.scrollTop = 0;   
-    priceBody.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      
+    priceBody.scrollTop = 0;
     priceModal.classList.add("show");
     priceModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
-    // Focus the close button for accessibility
     priceCloseBtn && priceCloseBtn.focus();
   }
 
   function closePriceModal() {
+    if (!priceModal) return;
+
     priceModal.classList.remove("show");
     priceModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
 
-  if (priceModal && priceOpenBtns.length > 0) {
-    priceOpenBtns.forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        const key = btn.getAttribute("data-price");
-        openPriceModal(key);
-      });
-    });
+  priceOpenBtns.forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      const key = btn.getAttribute("data-price");
+      const data = PRICE_DETAILS[key];
 
-    // Close by X
+      if (data) openModalWithData(data);
+    });
+  });
+
+  membershipPricingBtns.forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      const key = btn.getAttribute("data-plan");
+      const data = MEMBERSHIP_PRICING[key];
+
+      if (data) openModalWithData(data);
+    });
+  });
+
+  if (priceModal) {
     priceCloseBtn && priceCloseBtn.addEventListener("click", closePriceModal);
 
-    // Close by clicking overlay background
-    priceModal.addEventListener("click", (e) => {
+    priceModal.addEventListener("click", e => {
       if (e.target === priceModal) closePriceModal();
     });
 
-    // Close on ESC (only if this modal is open)
-    document.addEventListener("keydown", (e) => {
+    document.addEventListener("keydown", e => {
       if (e.key === "Escape" && priceModal.classList.contains("show")) {
         closePriceModal();
       }
     });
   }
-
-    
 });

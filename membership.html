@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Membership Plan | Winnie Paws</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="membership.css" />
+  </head>
+
+  <body>
+    <section class="membership-hero">
+      <div class="membership-hero-text">
+        <span class="eyebrow">🐾 Winnie Paws Membership</span>
+        <h1>Happy pups. Every month.</h1>
+        <p>
+        Choose a grooming membership that keeps your pup fresh, fluffy,
+        and ready for cuddles all month long.
+        </p>
+      </div>
+
+      <div class="membership-hero-card">
+        <div class="pup-circle">🐶</div>
+        <h3>Member Perks</h3>
+        <p>Priority booking, auto-scheduling, discounts, and extra love.</p>
+      </div>
+    </section>
+
+    <section class="membership-category">
+      <div class="membership-category-header">
+        <h2>Bath & Tidy Membership</h2>
+        <p>Keep your pup fresh, clean, and comfortable with consistent care.</p>
+      </div>
+
+      <div class="membership-grid">
+
+        <!-- ESSENTIAL -->
+        <div class="plan-card">
+          <h3>Essential</h3>
+          <span class="plan-tag">1x per month</span>
+
+          <ul>
+            <li>Bath & Tidy monthly (auto-scheduled)</li>
+            <li>Priority booking</li>
+            <li>Automatic reminders & scheduling</li>
+            <li>10% off add-ons</li>
+            <li>Quick touch-up if needed</li>
+          </ul>
+
+          <div class="plan-price">Starting at $55 / month</div>
+
+          <button class="btn view-pricing" data-plan="bath-essential">
+            View Pricing
+          </button>
+
+          <button class="btn membership-checkout">
+            Choose Plan
+          </button>
+        </div>
+
+        <!-- VIP -->
+        <div class="plan-card featured">
+          <div class="badge">Most Popular</div>
+
+          <h3>VIP</h3>
+          <span class="plan-tag">2x per month</span>
+
+          <ul>
+            <li>2 Bath & Tidy visits per month</li>
+            <li>VIP priority scheduling</li>
+            <li>Teeth brushing included</li>
+            <li>15% off add-ons</li>
+            <li>Flexible rescheduling</li>
+          </ul>
+
+          <div class="plan-price">Starting at $100 / month</div>
+
+          <button class="btn view-pricing" data-plan="bath-vip">
+            View Pricing
+          </button>
+
+          <button class="btn membership-checkout">
+            Choose Plan
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="membership-terms">
+      <h2>Membership Terms</h2>
+      <div class="terms-grid">
+        <div>📅 2-month minimum</div>
+        <div>💳 Monthly auto-payment</div>
+        <div>⏰ Priority booking</div>
+        <div>🔄 24–48h rescheduling notice</div>
+        <div>❌ Missed visits are forfeited</div>
+        <div>🐶 Extra fees may apply for special handling</div>
+      </div>
+    </section>
+
+    <section class="membership-cta">
+      <h2>Ready to keep your pup looking fresh?</h2>
+      <p>Pick a plan today and make grooming easier every month.</p>
+      <a href="#bath-tidy" class="btn">Choose a Plan 🐾</a>
+    </section>
+
+    <!-- PRICES MODAL -->
+    <div id="priceModal" class="price-modal-overlay" aria-hidden="true">
+      <div class="price-modal-card" role="dialog" aria-modal="true" aria-labelledby="priceModalTitle">
+        <button class="price-close" aria-label="Close pricing popup">&times;</button>
+
+        <div class="price-header">
+          <h2 id="priceModalTitle">Membership Pricing</h2>
+          <p id="priceModalSubtitle">Pricing by dog size</p>
+        </div>
+
+        <div class="price-body" id="priceModalBody"></div>
+      </div>
+    </div>
+
+    <script src="main.js" defer></script>
+
+  </body>
+</html>

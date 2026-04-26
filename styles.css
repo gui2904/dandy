@@ -6,15 +6,15 @@
 
 /* colors */
 :root {
-    --primary-color: #ebdcdc;
-    --secondary-color: #ebdcdc;
-    --third-color: #e29494;
-    --green: #808e5d;
-    --green-dark: #6a744b;
-    --pink: #f2cdc5;
-    --pink-dark: #e0b4aa;
-    --text-light: #fffaf5;
-    --text-dark: #4b4b4b;
+  --primary-color: #ebdcdc;
+  --secondary-color: #ebdcdc;
+  --third-color: #e29494;
+  --green: #808e5d;
+  --green-dark: #6a744b;
+  --pink: #f2cdc5;
+  --pink-dark: #e0b4aa;
+  --text-light: #fffaf5;
+  --text-dark: #4b4b4b;
 }
 
 html {
@@ -1237,6 +1237,128 @@ body.nav-open {
 .schedule-btn:hover {
   background-color: #e29494;
   color: #fff;
+}
+
+/* ==== MEMBERSHIP SECTION ==== */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--pink);
+  border: 2px solid var(--pink);
+}
+
+.btn-outline:hover {
+  background: var(--pink);
+  color: var(--green-dark);
+}
+
+.membership-section {
+  background-color: var(--pink);
+  background-image: url("./img/hero-bg2.webp");
+  padding: 80px 10%;
+}
+
+.membership-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.membership-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.membership-badge {
+  display: inline-block;
+  color: var(--third-color);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.membership-text h2 {
+  color: var(--green-dark);
+  font-size: 42px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.membership-text p {
+  color: var(--text-dark);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.membership-btn {
+  background-color: var(--green-dark);
+  color: #fff;
+}
+
+.membership-btn:hover {
+  background-color: var(--green);
+}
+
+.membership-card {
+  flex: 1;
+  min-width: 280px;
+  background: rgba(255, 250, 245, 0.75);
+  border: 2px solid rgba(226, 148, 148, 0.35);
+  border-radius: 28px;
+  padding: 34px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+}
+
+.membership-card h3 {
+  color: var(--green-dark);
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.membership-card ul {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.membership-card li {
+  color: var(--text-dark);
+  font-size: 16px;
+}
+
+.membership-card li::before {
+  content: "🐾";
+  margin-right: 10px;
+}
+
+@media (max-width: 700px) {
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .membership-section {
+    text-align: center;
+  }
+
+  .membership-text h2 {
+    font-size: 32px;
+  }
+
+  .membership-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* ==== CONTACT SECTION ==== */
