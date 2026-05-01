@@ -2,124 +2,214 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Membership Plan | Winnie Paws</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership | Winnie Paws</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="membership.css" />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./img/winni1.webp"/>
+    <link rel="preload" as="image" href="./img/hero-bg.webp" type="image/webp">
   </head>
 
   <body>
-    <section class="membership-hero">
-      <div class="membership-hero-text">
-        <span class="eyebrow">🐾 Winnie Paws Membership</span>
-        <h1>Happy pups. Every month.</h1>
-        <p>
-        Choose a grooming membership that keeps your pup fresh, fluffy,
-        and ready for cuddles all month long.
-        </p>
-      </div>
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html#hero"><img id="logoText" src="./img/winni2.webp" alt="Winnie Paws logo"></a>
+        </div>
 
-      <div class="membership-hero-card">
-        <div class="pup-circle">🐶</div>
-        <h3>Member Perks</h3>
-        <p>Priority booking, auto-scheduling, discounts, and extra love.</p>
-      </div>
-    </section>
+        <!-- HAMBURGER BUTTON (shown on mobile) -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+        </button>
 
-    <section class="membership-category">
-      <div class="membership-category-header">
-        <h2>Bath & Tidy Membership</h2>
-        <p>Keep your pup fresh, clean, and comfortable with consistent care.</p>
-      </div>
-
-      <div class="membership-grid">
-
-        <!-- ESSENTIAL -->
-        <div class="plan-card">
-          <h3>Essential</h3>
-          <span class="plan-tag">1x per month</span>
-
+        <!-- NAV LINKS -->
+        <nav class="navbar" id="mainNav">
           <ul>
-            <li>Bath & Tidy monthly (auto-scheduled)</li>
-            <li>Priority booking</li>
-            <li>Automatic reminders & scheduling</li>
-            <li>10% off add-ons</li>
-            <li>Quick touch-up if needed</li>
+            <li class="navitem"><a href="index.html#hero">Home</a></li>
+            <li class="navitem"><a href="index.html#about">About</a></li>
+            <li class="navitem"><a href="index.html#servicos">Services</a></li>
+            <li class="navitem"><a href="index.html#prices">Prices</a></li>
+            <li class="navitem"><a href="#contact">Contact</a></li>
+            <li class="navitem"><a href="#plans">Membership</a></li>
+            <li class="navitem"><a href="#" class="open-booking nav-btn">Book Now</a></li>
           </ul>
-
-          <div class="plan-price">Starting at $55 / month</div>
-
-          <button class="btn view-pricing" data-plan="bath-essential">
-            View Pricing
-          </button>
-
-          <button class="btn membership-checkout">
-            Choose Plan
-          </button>
-        </div>
-
-        <!-- VIP -->
-        <div class="plan-card featured">
-          <div class="badge">Most Popular</div>
-
-          <h3>VIP</h3>
-          <span class="plan-tag">2x per month</span>
-
-          <ul>
-            <li>2 Bath & Tidy visits per month</li>
-            <li>VIP priority scheduling</li>
-            <li>Teeth brushing included</li>
-            <li>15% off add-ons</li>
-            <li>Flexible rescheduling</li>
-          </ul>
-
-          <div class="plan-price">Starting at $100 / month</div>
-
-          <button class="btn view-pricing" data-plan="bath-vip">
-            View Pricing
-          </button>
-
-          <button class="btn membership-checkout">
-            Choose Plan
-          </button>
-        </div>
-
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <section class="membership-terms">
-      <h2>Membership Terms</h2>
-      <div class="terms-grid">
-        <div>📅 2-month minimum</div>
-        <div>💳 Monthly auto-payment</div>
-        <div>⏰ Priority booking</div>
-        <div>🔄 24–48h rescheduling notice</div>
-        <div>❌ Missed visits are forfeited</div>
-        <div>🐶 Extra fees may apply for special handling</div>
-      </div>
-    </section>
-
-    <section class="membership-cta">
-      <h2>Ready to keep your pup looking fresh?</h2>
-      <p>Pick a plan today and make grooming easier every month.</p>
-      <a href="#bath-tidy" class="btn">Choose a Plan 🐾</a>
-    </section>
-
-    <!-- PRICES MODAL -->
-    <div id="priceModal" class="price-modal-overlay" aria-hidden="true">
-      <div class="price-modal-card" role="dialog" aria-modal="true" aria-labelledby="priceModalTitle">
-        <button class="price-close" aria-label="Close pricing popup">&times;</button>
-
-        <div class="price-header">
-          <h2 id="priceModalTitle">Membership Pricing</h2>
-          <p id="priceModalSubtitle">Pricing by dog size</p>
+    <main class="membership-page">
+      <section class="membership-hero" aria-labelledby="membership-hero-title">
+        <div class="membership-hero__content membership-hero-text">
+          <span class="membership-hero__eyebrow eyebrow">Winnie Paws Membership</span>
+          <h1 id="membership-hero-title">Happy pups. Every month.</h1>
+          <p>
+            Keep your pup fresh, fluffy, and cared for with monthly grooming
+            plans made for easy routines and extra tail wags.
+          </p>
+          <div class="membership-hero__actions hero-actions">
+            <a href="#plans" class="btn">VIEW PLANS</a>
+            <a href="#" class="btn btn-outline open-booking">BOOK NOW</a>
+          </div>
         </div>
 
-        <div class="price-body" id="priceModalBody"></div>
+        <div class="membership-hero__media membership-hero-card" aria-label="Membership highlights">
+          <div class="pup-circle" aria-hidden="true">🐾</div>
+          <h3>Monthly Pet Care Club</h3>
+          <p>Priority booking, member savings, and a happier grooming routine.</p>
+        </div>
+      </section>
+
+      <section class="membership-plans membership-category" id="plans" aria-labelledby="membership-plans-title">
+        <div class="membership-category-header">
+          <h2 id="membership-plans-title">Choose Your Membership</h2>
+          <p>Simple monthly grooming plans for fresh coats and happy paws.</p>
+        </div>
+
+        <div class="membership-plans__grid membership-grid">
+          <article class="membership-plan plan-card">
+            <h3>Bath &amp; Tidy</h3>
+            <span class="plan-tag">Fresh maintenance care</span>
+            <p class="membership-plan__price plan-price">Starting at $55 / month</p>
+            <ul class="membership-plan__list">
+              <li>Monthly bath and blow-dry</li>
+              <li>Face, feet, and sanitary trim</li>
+              <li>Nail clipping and ear cleaning</li>
+              <li>Priority booking access</li>
+              <li>10% off grooming add-ons</li>
+            </ul>
+            <a href="#" class="btn open-booking">Start Membership</a>
+          </article>
+
+          <article class="membership-plan membership-plan--featured plan-card featured">
+            <div class="membership-plan__badge badge">Most Popular</div>
+            <h3>Full Groom</h3>
+            <span class="plan-tag">Complete monthly styling</span>
+            <p class="membership-plan__price plan-price">Starting at $75 / month</p>
+            <ul class="membership-plan__list">
+              <li>Monthly full groom service</li>
+              <li>Bath, haircut, nails, and ears</li>
+              <li>Paw pad and sanitary trim</li>
+              <li>Priority booking access</li>
+              <li>15% off grooming add-ons</li>
+            </ul>
+            <a href="#" class="btn open-booking">Start Membership</a>
+          </article>
+
+          <article class="membership-plan plan-card">
+            <h3>Premium Pup</h3>
+            <span class="plan-tag">Extra pampering perks</span>
+            <p class="membership-plan__price plan-price">Starting at $100 / month</p>
+            <ul class="membership-plan__list">
+              <li>Monthly premium grooming visit</li>
+              <li>Teeth brushing included</li>
+              <li>De-shed or coat-conditioning perk</li>
+              <li>VIP priority scheduling</li>
+              <li>Birthday surprise for your pup</li>
+            </ul>
+            <a href="#" class="btn open-booking">Start Membership</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="membership-perks membership-terms" aria-labelledby="membership-perks-title">
+        <h2 id="membership-perks-title">Member Perks</h2>
+        <div class="membership-perks__grid terms-grid">
+          <div class="membership-perks__item">Monthly grooming reminders</div>
+          <div class="membership-perks__item">Priority appointment access</div>
+          <div class="membership-perks__item">Exclusive member savings</div>
+          <div class="membership-perks__item">Easy rescheduling support</div>
+          <div class="membership-perks__item">Add-on discounts</div>
+          <div class="membership-perks__item">Birthday treat for your pup</div>
+        </div>
+      </section>
+
+      <section class="membership-faq" aria-labelledby="membership-faq-title">
+        <div class="membership-category-header">
+          <h2 id="membership-faq-title">Membership FAQ</h2>
+          <p>Helpful details before you choose a plan.</p>
+        </div>
+
+        <div class="membership-faq__list">
+          <details class="membership-faq__item">
+            <summary>How often does my pup visit?</summary>
+            <p>Each membership includes one scheduled grooming visit per month.</p>
+          </details>
+
+          <details class="membership-faq__item">
+            <summary>Can I change my appointment?</summary>
+            <p>Yes. Please give 24-48 hours notice so we can find another time that works.</p>
+          </details>
+
+          <details class="membership-faq__item">
+            <summary>Are prices the same for every dog?</summary>
+            <p>Starting prices vary by coat, size, service needs, and behavior.</p>
+          </details>
+
+          <details class="membership-faq__item">
+            <summary>Can I add extra services?</summary>
+            <p>Yes. Members receive savings on popular add-ons when available.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="membership-cta" aria-labelledby="membership-cta-title">
+        <h2 id="membership-cta-title">Ready to keep your pup looking fresh?</h2>
+        <p>Pick a monthly plan and make grooming easier all year.</p>
+        <a href="#" class="btn open-booking">BOOK A MEMBERSHIP VISIT</a>
+      </section>
+    </main>
+
+    <footer id="contact" class="contact-section">
+      <div class="contact-inner">
+        <h2>CONTACT US</h2>
+        <p><strong>Phone:</strong> (728) 240-2867</p>
+        <p><strong>Location:</strong> Pompano, FL</p>
+        <p><strong>Hours:</strong> Mon-Sat · 9am-6pm</p>
+        <a href="#" class="btn open-booking">BOOK AN APPOINTMENT</a>
+      </div>
+    </footer>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="booking-modal-overlay">
+      <div class="booking-modal-card">
+        <button class="booking-close" aria-label="Close scheduling popup">&times;</button>
+
+        <div class="booking-header">
+          <h2>Book Your Grooming Appointment</h2>
+          <p>Choose a time that works for you. We will pamper your pup.</p>
+        </div>
+
+        <div class="booking-body">
+          <!-- Calendly inline widget -->
+          <div
+            id="calendly-inline-container"
+            class="calendly-inline-widget"
+            style="min-width:320px;"
+          ></div>
+          <!-- Calendly inline widget end -->
+        </div>
+
+        <div class="booking-footer">
+          <!-- Download consent form button -->
+          <a
+            href="#"
+            id="consent-download-btn"
+            class="btn consent-btn btn-primary"
+          >
+            DOWNLOAD CONSENT FORM
+          </a>
+
+          <small>Questions? Text us at (728) 240-2867.</small>
+        </div>
       </div>
     </div>
 
-    <script src="main.js" defer></script>
+    <!-- Calendly script (required for embedded widget) -->
+    <script src="https://assets.calendly.com/assets/external/widget.js"></script>
 
+    <!-- Your main JS -->
+    <script src="main.js" defer></script>
   </body>
 </html>
