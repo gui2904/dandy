@@ -60,7 +60,7 @@
           </p>
           <div class="membership-hero__actions hero-actions">
             <a href="#plans" class="btn">VIEW PLANS</a>
-            <a href="#" class="btn btn-outline open-booking">BOOK NOW</a>
+            <a href="#plans" class="btn btn-outline">START MEMBERSHIP</a>
           </div>
         </div>
 
@@ -89,7 +89,9 @@
               <li>Priority booking access</li>
               <li>10% off grooming add-ons</li>
             </ul>
-            <a href="#" class="btn open-booking">Start Membership</a>
+            <div class="membership-plan__action">
+              <a href="https://buy.stripe.com/test_bJeaEQ0gpbEv5Up4yu2wU00" class="btn membership-start" data-plan="bath-tidy">Start Membership</a>
+            </div>
           </article>
 
           <article class="membership-plan membership-plan--featured plan-card featured">
@@ -104,7 +106,9 @@
               <li>Priority booking access</li>
               <li>15% off grooming add-ons</li>
             </ul>
-            <a href="#" class="btn open-booking">Start Membership</a>
+            <div class="membership-plan__action">
+              <a href="https://buy.stripe.com/test_4gMfZae7f9wnciNe942wU01" class="btn membership-start" data-plan="full-groom">Start Membership</a>
+            </div>
           </article>
 
           <article class="membership-plan plan-card">
@@ -118,7 +122,9 @@
               <li>VIP priority scheduling</li>
               <li>Birthday surprise for your pup</li>
             </ul>
-            <a href="#" class="btn open-booking">Start Membership</a>
+            <div class="membership-plan__action">
+              <a href="#" class="btn membership-start" data-plan="premium-pup">Start Membership</a>
+            </div>
           </article>
         </div>
       </section>
@@ -166,8 +172,8 @@
 
       <section class="membership-cta" aria-labelledby="membership-cta-title">
         <h2 id="membership-cta-title">Ready to keep your pup looking fresh?</h2>
-        <p>Pick a monthly plan and make grooming easier all year.</p>
-        <a href="#" class="btn open-booking">BOOK A MEMBERSHIP VISIT</a>
+        <p>Choose a monthly plan and make grooming easier all year.</p>
+        <a href="#plans" class="btn">START MEMBERSHIP</a>
       </section>
     </main>
 
@@ -247,12 +253,6 @@
     <!-- Calendly script (required for embedded widget) -->
     <script src="https://assets.calendly.com/assets/external/widget.js"></script>
 
-    <script>
-      window.MEMBERSHIP_CALENDLY_URL = "https://calendly.com/winniepaws2323/new-meeting-clone?hide_gdpr_banner=1&background_color=fffaf5&text_color=000000&primary_color=e29494";
-    </script>
-
-    <script src="main.js" defer></script>
-    
     <!-- Your main JS -->
     <script src="main.js" defer></script>
   </body>
